@@ -89,6 +89,8 @@ def collect():
             fm, body = split_fm(p.read_text(encoding="utf-8"))
             extra[rel] = {"fm": fm, "body": body, "out": rel.replace("/", "-").replace(".md", ".html"), "title": title}
     for p in sorted(ROOT.glob("process/*.md")):
+        if p.name == "submission.md":
+            continue
         rel = f"process/{p.name}"
         if rel not in extra:
             fm, body = split_fm(p.read_text(encoding="utf-8"))
@@ -110,9 +112,15 @@ def render_md(body, pages, extra):
     h = markdown.markdown(body, extensions=["tables", "fenced_code"])
     h = re.sub(r'(?<!["=>])(https?://[^\s<)]+)', r'<a href="\1">\1</a>', h)
     for rel, info in extra.items():
-        h = h.replace(rel, f'<a href="{info["out"]}">{rel}</a>')
+        h = re.sub(rf'(?<![\w/"=.-]){re.escape(rel)}', f'<a href="{info["out"]}">{rel}</a>', h)
     # 檔案相對連結（例如 [docs/requirements.md](requirements.md)）
-    h = re.sub(r'href="([\w\-/.]+)\.md"', lambda m: f'href="{Path(m.group(1)).name}.html"', h)
+    def md_href(m):
+        name = Path(m.group(1)).name + ".md"
+        for rel, info in extra.items():
+            if rel == name or rel.endswith("/" + name):
+                return f'href="{info["out"]}"'
+        return f'href="{Path(m.group(1)).name}.html"'
+    h = re.sub(r'href="([\w\-/.]+)\.md"', md_href, h)
     return tone_spans(h)
 
 

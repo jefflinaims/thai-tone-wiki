@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>反思：哪個節點最常出錯？檢查往前移到哪裡？｜泰語聲調入門 Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f2a37;--muted:#5b6675;--paper:#fbf8f2;--card:#fff;--line:#e6e0d4;--accent:#0f6b6b;
+--t-mid:#5a6b7b;--t-low:#4b4fb8;--t-fall:#c0392b;--t-high:#c27c0e;--t-rise:#2e8b57}
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans TC","Noto Sans Thai","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+color:var(--ink);background:var(--paper);line-height:1.75}
+a{color:var(--accent)}header.top{background:var(--ink);color:#fff;padding:.7rem 1.4rem;display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
+header.top a{color:#fff;text-decoration:none;opacity:.9}header.top a:hover{opacity:1;text-decoration:underline}
+header.top .brand{font-weight:700;margin-right:auto}
+.wrap{display:grid;grid-template-columns:250px 1fr;gap:2rem;max-width:1180px;margin:0 auto;padding:1.5rem}
+nav.side{font-size:.92rem;position:sticky;top:1rem;align-self:start;max-height:92vh;overflow:auto}
+nav.side h4{margin:1rem 0 .3rem;color:var(--muted);font-size:.8rem;letter-spacing:.08em}
+nav.side a{display:block;padding:.15rem .4rem;border-radius:6px;text-decoration:none;color:var(--ink)}
+nav.side a.cur{background:#e8f1f0;color:var(--accent);font-weight:600}
+main{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.6rem 2.2rem;min-width:0}
+main h1{margin-top:.2rem;font-size:1.7rem}main h2{border-top:1px solid var(--line);padding-top:1rem;margin-top:1.8rem;font-size:1.2rem}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left;vertical-align:top}th{background:#f4efe5}
+code,pre{background:#f4efe5;border-radius:6px;font-size:.88rem}pre{padding:.8rem;overflow:auto}code{padding:.1rem .3rem}
+blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px solid var(--t-high);border-radius:6px}
+.meta{color:var(--muted);font-size:.85rem;margin-bottom:1rem}.chip{display:inline-block;border-radius:999px;padding:0 .6rem;font-size:.78rem;background:#eef3f3;color:var(--accent);margin-right:.3rem}
+.ex{white-space:nowrap}.ex .th{font-size:1.15em;font-family:"Noto Sans Thai",sans-serif}.ex .ro{font-style:italic;margin:0 .15rem}
+.ex .tn{display:inline-block;color:#fff;border-radius:5px;padding:0 .35rem;font-size:.8em;font-style:normal}
+.t-mid{background:var(--t-mid)}.t-low{background:var(--t-low)}.t-fall{background:var(--t-fall)}.t-high{background:var(--t-high)}.t-rise{background:var(--t-rise)}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.35rem 1rem;cursor:pointer;font:inherit}
+.filters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.9rem}
+.card{border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;text-decoration:none;color:var(--ink);background:#fff;transition:.15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card b{display:block;margin:.2rem 0}.card small{color:var(--muted)}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.2rem 0}
+.hero a{display:block;padding:1.2rem;border-radius:14px;background:var(--ink);color:#fff;text-decoration:none}
+.hero a b{font-size:1.2rem;display:block}.hero a.alt{background:var(--accent)}.hero a.alt2{background:#fff;color:var(--ink);border:1px solid var(--line)}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
+</style></head><body>
+<header class="top"><span class="brand">泰語聲調入門 LLM Wiki</span><a href="index.html">Wiki 目錄</a><a href="../slides/index.html">教學簡報</a><a href="../index.html">作業首頁</a><a href="https://github.com/jefflinaims/thai-tone-wiki">GitHub</a></header>
+<div class="wrap"><nav class="side"><a href="index.html">目錄（全部頁面）</a>
+<h4>概念</h4>
+<a href="consonant-classes.html">子音三類</a>
+<a href="five-tones.html">五個聲調總覽</a>
+<a href="live-dead-syllables.html">活音節與死音節</a>
+<a href="pitch-contours.html">五個聲調的音高曲線</a>
+<a href="tone-in-speech.html">說話時聲調會變</a>
+<a href="tone-marks.html">四個聲調符號</a>
+<a href="tone-notation.html">聲調的標記法</a>
+<a href="tone-rules.html">聲調規則表</a>
+<a href="vowel-length.html">母音長短</a>
+<h4>例字</h4>
+<a href="everyday-pairs.html">日常容易念錯的字組</a>
+<a href="khaa-five-tones.html">khaa 的五個聲調</a>
+<a href="khaao-set.html">khaao：米飯、新聞、白色</a>
+<a href="naa-five-tones.html">naa 的五個聲調</a>
+<h4>易錯</h4>
+<a href="mandarin-tone-mapping.html">不能直接套用國語四聲</a>
+<a href="rising-is-not-lowest.html">升調不是「最低的調」</a>
+<a href="romanization-needs-tone.html">拼音不標聲調等於沒寫</a>
+<a href="tone-mark-is-not-tone.html">符號名稱不等於聲調</a>
+<h4>過程紀錄</h4><a href="process-interview.html">需求訪談</a><a href="AGENTS.html">AGENTS.md</a><a href="workflow-SKILL.html">graph（SKILL.md）</a><a href="log.html">ingest 紀錄</a></nav><main><h1>反思：哪個節點最常出錯？檢查往前移到哪裡？</h1>
+<p>這份反思根據兩次實際執行的紀錄：<a href="runs-run1-graph-v1-report.html">runs/run1-graph-v1/report.md</a>（graph v1）、<a href="runs-run2-graph-v2-report.html">runs/run2-graph-v2/report.md</a>（graph v2）。</p>
+<h2>1. 哪一個節點最常出錯？</h2>
+<p>run1 一共抓到 10 個問題，追查每個問題是在哪個節點發生的：</p>
+<table>
+<thead>
+<tr>
+<th>出錯的節點</th>
+<th>次數</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 渲染（HTML 模板）</td>
+<td><strong>4</strong></td>
+<td>翻頁按鈕蓋住頁碼、曲線標籤重疊、升調曲線低於刻度 1、標籤被推出圖框</td>
+</tr>
+<tr>
+<td>4 逐頁稿</td>
+<td>3</td>
+<td>把 Wiki 的「≤ 3 個半音」寫成「不到 3 個半音」、「半音」沒有解釋</td>
+</tr>
+<tr>
+<td>2 證據卡</td>
+<td>1（最嚴重）</td>
+<td>摘要時把「<strong>活音節</strong>、不加符號時」的條件丟掉，簡報變成「不加符號時高類念升調」，這是錯的</td>
+</tr>
+<tr>
+<td>1 檢索</td>
+<td>1</td>
+<td>漏了「活音節／死音節」的定義頁</td>
+</tr>
+<tr>
+<td>檢查規則本身</td>
+<td>1</td>
+<td>把「第 7 頁說明」的頁碼當成事實數字（誤判）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>次數最多的是節點 5（渲染）</strong>，而且 G3 的程式前兩輪都回報「全部通過」，問題都是我看截圖才發現的。
+<strong>最嚴重的錯發生在節點 2（證據卡）</strong>：它沒有被當場抓到，往下傳了兩個節點，到最後的 AI 審查才被發現。AI 審查是整個流程最貴、也最不穩定的一關。</p>
+<h2>2. 發現問題後，把檢查往前移到了哪裡？</h2>
+<table>
+<thead>
+<tr>
+<th>原本在哪裡抓到</th>
+<th>往前移到</th>
+<th>怎麼做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G2 忠實度（逐頁稿寫完之後）</td>
+<td><strong>G2a 證據卡檢查</strong>（證據卡寫完、還沒寫大綱之前）</td>
+<td>證據卡改成逐字引文，程式檢查每段引文是否一字不差出現在 Wiki；引用表格的一列時必須附上表頭，條件才不會不見</td>
+</tr>
+<tr>
+<td>G3 渲染檢查（最後）</td>
+<td><strong>G0 模板測試</strong>（還沒開始寫稿之前）</td>
+<td>模板改過就先用最難排版的假資料測一次（最長的標題、擠在一起的曲線、全部打開的測驗答案）</td>
+</tr>
+<tr>
+<td>人看截圖</td>
+<td>G3 的程式</td>
+<td>把人看到的問題寫成程式檢查：文字重疊、圖上文字超出圖框</td>
+</tr>
+<tr>
+<td>跑簡報時才發現 Wiki 兩頁說法不一致</td>
+<td>Ingest 的時候</td>
+<td><a href="AGENTS.html">AGENTS.md</a> 已規定 ingest 時要跟舊頁比對；這次的教訓是「微微、大約、≤」這類程度詞也要比對，lint 抓不到</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 有沒有因此修改 workflow / graph？為什麼？</h2>
+<p>有，從 v1 改成 v2（見 <a href="workflow-SKILL.html">workflow/SKILL.md</a>；流程圖在作業首頁）：</p>
+<ol>
+<li><strong>新增 G2a 證據卡檢查</strong>：錯誤在哪裡發生，就在哪裡檢查。逐字引文可以用程式檢查，比最後才請 AI 審查更便宜、也更穩定。</li>
+<li><strong>新增 G0 模板測試</strong>：渲染問題的原因是模板，跟每次的內容無關，應該在寫稿之前就測完。</li>
+<li><strong>G3 多一條退回節點 5 的線</strong>：v1 只能退回節點 4（縮短文字），但模板的問題靠改文字修不好。</li>
+<li><strong>逐頁稿每頁要列出用到的證據卡</strong>，G2 的數字、泰文改成對證據卡比對，不再對整頁 Wiki 比對。</li>
+</ol>
+<p>改完之後再跑一次（run2），結果：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>run1（v1）</th>
+<th>run2（v2）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>內容講錯（忠實度）</td>
+<td>3 個</td>
+<td>0 個</td>
+</tr>
+<tr>
+<td>AI 審查抓到的問題</td>
+<td>5 個</td>
+<td>2 個（教學性 1、出處 1）</td>
+</tr>
+<tr>
+<td>G3 跑幾輪</td>
+<td>3 輪（剛好到上限）</td>
+<td>1 輪</td>
+</tr>
+</tbody>
+</table>
+<p>另外，run2 補證據卡時，G2a 把 Wiki 本身寫得不一致的地方翻出來了（一頁寫「不到 3 個半音」，另一頁寫「≤ 3」）。檢查往前移，不只保護了簡報，也回頭修正了知識庫。</p>
+<h2>4. 還沒解決的限制</h2>
+<ul>
+<li>AI 審查是在同一個工作階段裡做的，不是真正的「新對話」。我用「只看簡報和 Wiki 原文、不看證據卡和大綱」來降低偏誤，但這仍然算是自己檢查自己。之後可以把 <code>workflow/prompts/reviewer.md</code> 貼到另一個新對話去跑。</li>
+<li>lint 只能比對泰文拼音，抓不到文字層面的矛盾（例如程度詞），目前還是要靠 ingest 時人工比對。</li>
+<li>ห 前綴（หนา、หมา）的聲調規則，目前的 7 篇來源都沒有，Wiki 標為待補。</li>
+</ul></main></div></body></html>

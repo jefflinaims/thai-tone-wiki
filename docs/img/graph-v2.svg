@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" width="1400" height="560" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8aa3"/></marker><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d9622b"/></marker></defs>
+<rect width="1400" height="560" fill="#fbf8f2"/>
+<text x="30" y="34" font-size="22" font-weight="700" fill="#1f2a37">graph v2：從 LLM Wiki 產生教學 HTML 簡報</text>
+<path d="M 370 142.0 L 408 142.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 560 142.0 L 598 142.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 750 142.0 L 788 142.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 940 142.0 L 978 142.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 1130 142.0 L 1168 142.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 370 362.0 L 408 362.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 560 362.0 L 598 362.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 750 362.0 L 788 362.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 940 362.0 L 978 362.0" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 180 142.0 L 218 142.0" fill="none" stroke="#7d8aa3" stroke-width="3" stroke-dasharray="4 4" marker-end="url(#a)"/>
+<path d="M 1245 174 L 1245 262 L 280 262 L 280 328" fill="none" stroke="#7d8aa3" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 865 110 L 865 86 L 675 86 L 675 108" fill="none" stroke="#d9622b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#b)"/>
+<text x="770" y="80" font-size="15" fill="#d9622b" text-anchor="middle">引文對不上（v2）</text>
+<path d="M 1245 110 L 1245 62 L 1055 62 L 1055 108" fill="none" stroke="#d9622b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#b)"/>
+<text x="1150" y="78" font-size="15" fill="#d9622b" text-anchor="middle">改大綱</text>
+<path d="M 1205 110 L 1205 42 L 295 42 L 295 108" fill="none" stroke="#d9622b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#b)"/>
+<text x="750" y="34" font-size="15" fill="#d9622b" text-anchor="middle">補檢索</text>
+<path d="M 485 394 L 485 428 L 300 428 L 300 396" fill="none" stroke="#d9622b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#b)"/>
+<text x="392" y="448" font-size="15" fill="#d9622b" text-anchor="middle">只重寫那幾頁</text>
+<path d="M 470 330 L 470 214 L 255 214 L 255 176" fill="none" stroke="#d9622b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#b)"/>
+<text x="362" y="208" font-size="15" fill="#d9622b" text-anchor="middle">缺資料</text>
+<path d="M 880 394 L 880 492 L 260 492 L 260 396" fill="none" stroke="#d9622b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#b)"/>
+<text x="570" y="512" font-size="15" fill="#d9622b" text-anchor="middle">文字太多（溢出）</text>
+<path d="M 835 394 L 835 446 L 675 446 L 675 396" fill="none" stroke="#d9622b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#b)"/>
+<text x="755" y="466" font-size="15" fill="#d9622b" text-anchor="middle">模板問題（v2）</text>
+<text x="485" y="196" font-size="15" fill="#d9622b" text-anchor="middle">不足 → 停止</text>
+<text x="105" y="96" font-size="13" fill="#5b6675" text-anchor="middle">模板改過才跑</text>
+<rect x="30" y="110" width="150" height="64" rx="12" fill="#eceff3" stroke="#5b6675" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="105.0" y="148.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">G0 模板測試</text>
+<rect x="136" y="99" width="50" height="22" rx="11" fill="#2e8b57"/><text x="161" y="115" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">v2 新增</text>
+<rect x="220" y="110" width="150" height="64" rx="12" fill="#efe7fb" stroke="#7b5cc4" stroke-width="2.5"/>
+<text x="295.0" y="148.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">1 檢索 Wiki</text>
+<rect x="410" y="110" width="150" height="64" rx="12" fill="#eceff3" stroke="#5b6675" stroke-width="2.5"/>
+<text x="485.0" y="148.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">G1 覆蓋率</text>
+<rect x="600" y="110" width="150" height="64" rx="12" fill="#efe7fb" stroke="#7b5cc4" stroke-width="2.5"/>
+<text x="675.0" y="138.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">2 證據卡</text>
+<text x="675.0" y="158.0" font-size="14" font-weight="400" fill="#1f2a37" text-anchor="middle">（逐字引文）</text>
+<rect x="790" y="110" width="150" height="64" rx="12" fill="#eceff3" stroke="#5b6675" stroke-width="2.5"/>
+<text x="865.0" y="138.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">G2a 證據卡</text>
+<text x="865.0" y="158.0" font-size="14" font-weight="400" fill="#1f2a37" text-anchor="middle">（檢查）</text>
+<rect x="896" y="99" width="50" height="22" rx="11" fill="#2e8b57"/><text x="921" y="115" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">v2 新增</text>
+<rect x="980" y="110" width="150" height="64" rx="12" fill="#efe7fb" stroke="#7b5cc4" stroke-width="2.5"/>
+<text x="1055.0" y="148.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">3 大綱</text>
+<rect x="1170" y="110" width="150" height="64" rx="12" fill="#fde6d8" stroke="#d9622b" stroke-width="2.5"/>
+<text x="1245.0" y="148.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">人工確認</text>
+<rect x="220" y="330" width="150" height="64" rx="12" fill="#efe7fb" stroke="#7b5cc4" stroke-width="2.5"/>
+<text x="295.0" y="368.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">4 逐頁稿</text>
+<rect x="410" y="330" width="150" height="64" rx="12" fill="#eceff3" stroke="#5b6675" stroke-width="2.5"/>
+<text x="485.0" y="358.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">G2 忠實度</text>
+<text x="485.0" y="378.0" font-size="14" font-weight="400" fill="#1f2a37" text-anchor="middle">（程式＋AI）</text>
+<rect x="600" y="330" width="150" height="64" rx="12" fill="#efe7fb" stroke="#7b5cc4" stroke-width="2.5"/>
+<text x="675.0" y="368.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">5 渲染 HTML</text>
+<rect x="790" y="330" width="150" height="64" rx="12" fill="#eceff3" stroke="#5b6675" stroke-width="2.5"/>
+<text x="865.0" y="368.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">G3 渲染檢查</text>
+<rect x="980" y="330" width="150" height="64" rx="12" fill="#e3f3e6" stroke="#2e8b57" stroke-width="2.5"/>
+<text x="1055.0" y="368.0" font-size="17" font-weight="700" fill="#1f2a37" text-anchor="middle">6 交件＋報告</text>
+<rect x="1190" y="300" width="26" height="20" rx="5" fill="#efe7fb" stroke="#7b5cc4" stroke-width="2"/><text x="1226" y="316" font-size="15" fill="#1f2a37">AI 節點</text>
+<rect x="1190" y="334" width="26" height="20" rx="5" fill="#eceff3" stroke="#5b6675" stroke-width="2"/><text x="1226" y="350" font-size="15" fill="#1f2a37">檢查關卡（程式）</text>
+<rect x="1190" y="368" width="26" height="20" rx="5" fill="#fde6d8" stroke="#d9622b" stroke-width="2"/><text x="1226" y="384" font-size="15" fill="#1f2a37">人工確認</text>
+<path d="M 1190 412 L 1216 412" stroke="#d9622b" stroke-width="2.5" stroke-dasharray="7 5"/><text x="1226" y="417" font-size="15" fill="#1f2a37">退回路線（最多 3 輪）</text>
+</svg>
