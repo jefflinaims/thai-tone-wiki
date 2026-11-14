@@ -43,3 +43,12 @@ type: log
 - 拼音統一：S06 把不送氣 k 寫成 g（glai、glâi），依 AGENTS.md 3.2 改成 klai、klâi
 - 用 S05 規則表驗證 S06 的 10 個例字：可以推的都對得上；หมา 的「ห 前綴」規則仍缺來源
 - S06 原文有內部不一致（同一個字兩種意思）→ 該組例字不收；另一組含不適合課堂的字義，也不收
+
+## [2026-11-14] ingest | S07 UCLA Phonetics「The tones of Standard Chinese」（B 級）
+- 新增：pitfalls/mandarin-tone-mapping（泰語聲調能不能套國語四聲）
+- 更新：concepts/five-tones、concepts/pitch-contours（連到新易錯頁）
+- 跟舊頁比對：沒有矛盾。S07 也指出國語實測值跟傳統數字有差，支持 pitch-contours「只講方向、不背數字」的決定
+
+## [2026-11-14] lint | 7 篇 ingest 完成後的全面健檢
+- 17 頁、31 個不同的泰文例字；斷鏈 0、孤兒頁 0、拼音不一致 0、來源矛盾規則違反 0
+- 腳本抓不到、由 AI 提出的資料缺口：ห 前綴（หน่า、หนา、หมา）的聲調規則目前沒有來源 → 建議下一篇 ingest 找「ห นำ」的規則說明

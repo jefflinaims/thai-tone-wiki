@@ -43,6 +43,7 @@ updated: 2026-11-14
 - [[tone-notation]]
 - [[khaa-five-tones]]
 - [[rising-is-not-lowest]]
+- [[mandarin-tone-mapping]]
 
 ## 來源差異
 - SoWL 的名稱（S03，B 級）把中調叫 mid falling、高調叫 high rising、低調叫 low falling，聽起來像是「會移動的調」。

@@ -39,6 +39,7 @@ updated: 2026-11-14
 - 泰語除了聲調之外，**母音長短**也會改變意思，見 [[vowel-length]]。
 - 音節結尾是什麼音，跟聲調規則有關，見 [[live-dead-syllables]]。
 - 實際說話時，聲調會因為重音和語速改變，見 [[tone-in-speech]]。
+- 台灣學習者常見的錯誤：直接套用國語四聲，見 [[mandarin-tone-mapping]]。
 
 ## 相關頁面
 - [[pitch-contours]]
@@ -48,6 +49,7 @@ updated: 2026-11-14
 - [[khaao-set]]
 - [[everyday-pairs]]
 - [[rising-is-not-lowest]]
+- [[mandarin-tone-mapping]]
 - [[vowel-length]]
 - [[live-dead-syllables]]
 - [[tone-in-speech]]
