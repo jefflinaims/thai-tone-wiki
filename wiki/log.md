@@ -29,3 +29,9 @@ type: log
 - 跟舊頁比對 → **發現差異**：S03 和 S04 的五度數字不同（例如高調 45 對 35/55）。兩篇都是 B 級，不能互相推翻，所以改用 A 級的 S02 判斷「方向」；教學只講方向，不把某組數字當標準
 - 自我檢查：five-tones 多寫了一句「中低降高升是傳統順序」，但目前沒有任何來源支持這句 → 刪掉，等有來源再補
 - lint 第一次：**2 個錯誤**（naa-five-tones 連到還不存在的 tone-rules 頁）→ 先拿掉連結，等 S05 建好 tone-rules 再加回來 → lint 通過
+
+## [2026-11-14] ingest | S05 SEAsite（北伊利諾大學）泰語聲調規則表，Hartmann 1986（B 級）
+- 新增：concepts/consonant-classes、concepts/tone-marks、concepts/tone-rules、pitfalls/tone-mark-is-not-tone
+- 更新：concepts/live-dead-syllables（加上活／死定義，跟 S01 的結尾音合併）、concepts/five-tones（傳統順序：這次有 S05 當來源了；只有四個符號）、examples/khaa-five-tones（補泰文字＋推理欄）、examples/naa-five-tones（加回 tone-rules 連結）
+- 跟舊頁比對：用 S05 的規則表推 khaa 五個字的聲調，跟 S03 的對應**完全一致**，沒有矛盾
+- 資料缺口：หน่า、หน้า、หนา 前面多一個 ห 的規則，目前的來源都沒講 → 記在 tone-rules 的「還沒涵蓋」

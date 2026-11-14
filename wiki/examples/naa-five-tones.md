@@ -19,11 +19,13 @@ updated: 2026-11-14
 - 泰文寫法和意思來自 S04；S03 也列了同一組例字（只有拼音）。
 - S03 把 น้า 翻成 aunt；S04 說明得更精確，是「比媽媽年紀小的舅舅或阿姨」。兩者不衝突，採用較精確的說法。
 - 低調的例字「暱稱」在日常生活中不常用，教學時可以只拿另外四個來練習。
-- 五個字都是 n 開頭，但泰文的寫法不一樣（有的前面多一個 ห，有的加了聲調符號）。為什麼會這樣，要等規則類的來源 ingest 之後再補。
+- 五個字都是 n 開頭，但泰文的寫法不一樣（有的前面多一個 ห，有的加了聲調符號）。
+  น้า 可以用 [[tone-rules]] 推出來（低類 น＋้ → 高調）；前面多一個 ห 的寫法，目前的來源還沒有說明，列為待補。
 
 ## 相關頁面
 - [[khaa-five-tones]]
 - [[five-tones]]
+- [[tone-rules]]
 
 ## 參考資料
 - S03 · raw/S03-lmu-language-demo-thai.md · https://www.phonetik.uni-muenchen.de/studium/skripten/languagedemos/Demos/thai.html

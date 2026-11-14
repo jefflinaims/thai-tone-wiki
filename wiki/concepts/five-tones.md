@@ -1,7 +1,7 @@
 ---
 title: 五個聲調總覽
 type: concept
-sources: [S01, S02, S04]
+sources: [S01, S02, S04, S05]
 updated: 2026-11-14
 ---
 # 五個聲調總覽
@@ -19,6 +19,10 @@ updated: 2026-11-14
 | 升調 | rising | จัตวา | 曲折調 |
 
 學術文獻（S01）的說法是「五個聲調」：high、mid、low、rising、falling。
+表格的順序（中、低、降、高、升）是泰語傳統念誦和字典的排列方式（S05）。
+
+## 五個聲調，只有四個符號
+泰文只有四個聲調符號（S05），而且同一個符號在不同子音上會念成不同的調。看泰文推聲調的方法見 [[tone-rules]]。
 每個聲調實際的音高走向，見 [[pitch-contours]]；拼音上怎麼標聲調，見 [[tone-notation]]。
 
 ## 例字
@@ -43,3 +47,4 @@ updated: 2026-11-14
 - S01 · raw/S01-tingsabadh-abramson-1993.md · https://doi.org/10.1017/S0025100300004746
 - S02 · raw/S02-tumtavitikul-1995.md · https://www.coli.uni-saarland.de/Phonetics/icphs/ICPhS1995/13_ICPhS_1995_Vol_1/p13.1_118.pdf
 - S04 · raw/S04-wikipedia-tone-name.md · https://en.wikipedia.org/wiki/Tone_name
+- S05 · raw/S05-seasite-niu-tone-chart.md · https://seasite.niu.edu/thai/tones/tonechart.htm
