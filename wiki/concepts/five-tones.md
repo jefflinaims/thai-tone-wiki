@@ -19,7 +19,11 @@ updated: 2026-11-14
 | 升調 | rising | 曲折調 |
 
 學術文獻（S01）的說法是「五個聲調」：high、mid、low、rising、falling。
-每個聲調實際的音高走向，見 [[pitch-contours]]。
+每個聲調實際的音高走向，見 [[pitch-contours]]；拼音上怎麼標聲調，見 [[tone-notation]]。
+
+## 例字
+- [[khaa-five-tones]]：khaa（中）卡住、khàa（低）南薑、khâa（降）我、kháa（高）做買賣、khǎa（升）腿
+- [[naa-five-tones]]：naa（中）田、nâa（降）臉、náa（高）阿姨、nǎa（升）厚
 
 ## 學習重點
 - 泰語除了聲調之外，**母音長短**也會改變意思，見 [[vowel-length]]。
@@ -28,6 +32,9 @@ updated: 2026-11-14
 
 ## 相關頁面
 - [[pitch-contours]]
+- [[tone-notation]]
+- [[khaa-five-tones]]
+- [[naa-five-tones]]
 - [[vowel-length]]
 - [[live-dead-syllables]]
 - [[tone-in-speech]]

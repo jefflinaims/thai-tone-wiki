@@ -17,3 +17,9 @@ type: log
 - 新增：concepts/pitch-contours
 - 更新：concepts/five-tones（加上平調／曲折調分類、連到 pitch-contours）
 - 跟舊頁比對：S01 只列出聲調名稱、沒有描述音高，所以兩篇沒有矛盾；S02 補上「中、低微降，高微升」
+
+## [2026-11-14] ingest | S03 LMU Munich「Language Demos: Thai」（B 級）
+- 新增：examples/khaa-five-tones、examples/naa-five-tones、concepts/tone-notation
+- 更新：concepts/pitch-contours（加上五度數字、來源差異）、concepts/five-tones（連到例字）
+- 補上 S01 的缺口：khaa 五個例字分別是哪個聲調（S03 引用 IPA 圖解）
+- 跟舊頁比對 → **發現差異**：SoWL 把中、低、高調叫成 mid falling / low falling / high rising，跟 S02「三個平調」的分類不同。依規則採用 A 級的 S02，SoWL 的數字只當發音形狀的參考，寫進 pitch-contours 的「來源差異」
