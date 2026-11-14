@@ -1,6 +1,6 @@
 ---
 id: S05
-title: "Chart Showing the Relationship…（Chart of Thai Tones）"與「Tone chart（self-assessment module 1）」
+title: "Chart Showing the Relationship…（Chart of Thai Tones）與 Tone chart（self-assessment module 1）"
 author: John F. Hartmann（1986），北伊利諾大學 SEAsite 東南亞語言教學網站
 url: https://seasite.niu.edu/thai/tones/tonechart.htm
 url2: https://seasite.niu.edu/Thai/selfassessment/module1/tone_chart.htm

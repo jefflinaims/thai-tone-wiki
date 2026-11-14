@@ -6,7 +6,7 @@ type: log
 
 ## [2026-11-14] setup | 依確認後的需求摘要建立 AGENTS.md 與資料夾
 - 訪談 8 題（第一次一次問 4 題，使用者沒逐題作答，所以全部重問）→ 需求摘要 → 使用者確認 → 建檔
-- 見 docs/interview.md、docs/requirements.md
+- 見 process/interview.md、process/requirements.md
 
 ## [2026-11-14] ingest | S01 Tingsabadh & Abramson (1993) "Thai", JIPA（A 級）
 - 新增：concepts/five-tones、concepts/vowel-length、concepts/live-dead-syllables、concepts/tone-in-speech
@@ -52,3 +52,10 @@ type: log
 ## [2026-11-14] lint | 7 篇 ingest 完成後的全面健檢
 - 17 頁、31 個不同的泰文例字；斷鏈 0、孤兒頁 0、拼音不一致 0、來源矛盾規則違反 0
 - 腳本抓不到、由 AI 提出的資料缺口：ห 前綴（หน่า、หนา、หมา）的聲調規則目前沒有來源 → 建議下一篇 ingest 找「ห นำ」的規則說明
+
+## [2026-11-14] lint | 做網站時發現 lint 本身的漏洞
+- build_site.py 讀 raw/S04、S05、S07 的 frontmatter 時當掉：title 的引號寫法不是合法 YAML
+- 追查後發現 **lint 也讀不到這三篇的 tier，卻沒有報錯**，所以之前「採用的來源等級不能較低」這條檢查，碰到 S04/S05/S07 時其實是跳過的
+- 修正：lint 遇到 raw frontmatter 讀不出來或沒有 tier 時，改成報錯（重跑後確實抓到 3 個錯）→ 修好三篇的 title 引號（只改 metadata 格式，沒改內容）→ lint 通過
+- 另外：單獨出現的泰文聲調符號（例如「ข＋่」）在網頁上顯示成方框，統一在前面加上虛線圓圈 ◌（「ข＋◌่」），共 30 處
+- 資料夾調整：docs/ 改放 GitHub Pages 網站，訪談與需求摘要移到 process/

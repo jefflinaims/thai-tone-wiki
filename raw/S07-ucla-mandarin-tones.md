@@ -1,6 +1,6 @@
 ---
 id: S07
-title: "The tones of Standard Chinese"（錄音頁 2.1）
+title: "The tones of Standard Chinese（錄音頁 2.1）"
 author: UCLA Phonetics Lab（教材網站 Chapter 2 的錄音頁，網頁上沒有寫書名）
 url: https://www.phonetics.ucla.edu/vowels/chapter2/chinese/recording2.1.html
 tier: B

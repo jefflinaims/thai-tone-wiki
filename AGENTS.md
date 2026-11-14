@@ -1,7 +1,7 @@
 # AGENTS.md：泰語聲調入門 LLM Wiki
 
 這份檔案是給 AI 代理（Claude Code、Antigravity、Codex 等）看的「員工手冊」。
-內容依據 [docs/requirements.md](docs/requirements.md)（2026-11-14 經使用者確認）。
+內容依據 [process/requirements.md](process/requirements.md)（2026-11-14 經使用者確認）。
 架構依照 Karpathy〈LLM Wiki〉：raw（來源）→ wiki（AI 維護的知識頁）→ schema（本檔）。
 
 ## 1. 這個 Wiki 是做什麼的
@@ -25,8 +25,8 @@ wiki/
 workflow/          產生簡報的 graph（SKILL.md）與 prompt
 tools/             lint 與檢查腳本
 runs/              每次跑 graph 的中間產物和檢查報告
-slides/            產出的 HTML 簡報
-docs/              訪談紀錄、需求摘要、流程圖、反思
+process/           訪談紀錄、需求摘要、流程圖、反思
+docs/              GitHub Pages 網站（wiki/ 由 tools/build_site.py 產生、slides/ 由 tools/render_slides.py 產生，不要手改）
 ```
 
 ## 3. 寫作規範

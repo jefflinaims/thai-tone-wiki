@@ -1,6 +1,6 @@
 ---
 id: S04
-title: "Tone name"（Thai 段落）
+title: "Tone name（Thai 段落）"
 author: Wikipedia 編者
 url: https://en.wikipedia.org/wiki/Tone_name
 tier: B

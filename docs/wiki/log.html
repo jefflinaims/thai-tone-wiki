@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>紀錄｜泰語聲調入門 Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f2a37;--muted:#5b6675;--paper:#fbf8f2;--card:#fff;--line:#e6e0d4;--accent:#0f6b6b;
+--t-mid:#5a6b7b;--t-low:#4b4fb8;--t-fall:#c0392b;--t-high:#c27c0e;--t-rise:#2e8b57}
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans TC","Noto Sans Thai","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+color:var(--ink);background:var(--paper);line-height:1.75}
+a{color:var(--accent)}header.top{background:var(--ink);color:#fff;padding:.7rem 1.4rem;display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
+header.top a{color:#fff;text-decoration:none;opacity:.9}header.top a:hover{opacity:1;text-decoration:underline}
+header.top .brand{font-weight:700;margin-right:auto}
+.wrap{display:grid;grid-template-columns:250px 1fr;gap:2rem;max-width:1180px;margin:0 auto;padding:1.5rem}
+nav.side{font-size:.92rem;position:sticky;top:1rem;align-self:start;max-height:92vh;overflow:auto}
+nav.side h4{margin:1rem 0 .3rem;color:var(--muted);font-size:.8rem;letter-spacing:.08em}
+nav.side a{display:block;padding:.15rem .4rem;border-radius:6px;text-decoration:none;color:var(--ink)}
+nav.side a.cur{background:#e8f1f0;color:var(--accent);font-weight:600}
+main{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.6rem 2.2rem;min-width:0}
+main h1{margin-top:.2rem;font-size:1.7rem}main h2{border-top:1px solid var(--line);padding-top:1rem;margin-top:1.8rem;font-size:1.2rem}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left;vertical-align:top}th{background:#f4efe5}
+code,pre{background:#f4efe5;border-radius:6px;font-size:.88rem}pre{padding:.8rem;overflow:auto}code{padding:.1rem .3rem}
+blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px solid var(--t-high);border-radius:6px}
+.meta{color:var(--muted);font-size:.85rem;margin-bottom:1rem}.chip{display:inline-block;border-radius:999px;padding:0 .6rem;font-size:.78rem;background:#eef3f3;color:var(--accent);margin-right:.3rem}
+.ex{white-space:nowrap}.ex .th{font-size:1.15em;font-family:"Noto Sans Thai",sans-serif}.ex .ro{font-style:italic;margin:0 .15rem}
+.ex .tn{display:inline-block;color:#fff;border-radius:5px;padding:0 .35rem;font-size:.8em;font-style:normal}
+.t-mid{background:var(--t-mid)}.t-low{background:var(--t-low)}.t-fall{background:var(--t-fall)}.t-high{background:var(--t-high)}.t-rise{background:var(--t-rise)}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.35rem 1rem;cursor:pointer;font:inherit}
+.filters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.9rem}
+.card{border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;text-decoration:none;color:var(--ink);background:#fff;transition:.15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card b{display:block;margin:.2rem 0}.card small{color:var(--muted)}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.2rem 0}
+.hero a{display:block;padding:1.2rem;border-radius:14px;background:var(--ink);color:#fff;text-decoration:none}
+.hero a b{font-size:1.2rem;display:block}.hero a.alt{background:var(--accent)}.hero a.alt2{background:#fff;color:var(--ink);border:1px solid var(--line)}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
+</style></head><body>
+<header class="top"><span class="brand">泰語聲調入門 LLM Wiki</span><a href="index.html">Wiki 目錄</a><a href="../slides/index.html">教學簡報</a><a href="../index.html">作業首頁</a><a href="https://github.com/jefflinaims/thai-tone-wiki">GitHub</a></header>
+<div class="wrap"><nav class="side"><a href="index.html">目錄（全部頁面）</a>
+<h4>概念</h4>
+<a href="consonant-classes.html">子音三類</a>
+<a href="five-tones.html">五個聲調總覽</a>
+<a href="live-dead-syllables.html">活音節與死音節</a>
+<a href="pitch-contours.html">五個聲調的音高曲線</a>
+<a href="tone-in-speech.html">說話時聲調會變</a>
+<a href="tone-marks.html">四個聲調符號</a>
+<a href="tone-notation.html">聲調的標記法</a>
+<a href="tone-rules.html">聲調規則表</a>
+<a href="vowel-length.html">母音長短</a>
+<h4>例字</h4>
+<a href="everyday-pairs.html">日常容易念錯的字組</a>
+<a href="khaa-five-tones.html">khaa 的五個聲調</a>
+<a href="khaao-set.html">khaao：米飯、新聞、白色</a>
+<a href="naa-five-tones.html">naa 的五個聲調</a>
+<h4>易錯</h4>
+<a href="mandarin-tone-mapping.html">不能直接套用國語四聲</a>
+<a href="rising-is-not-lowest.html">升調不是「最低的調」</a>
+<a href="romanization-needs-tone.html">拼音不標聲調等於沒寫</a>
+<a href="tone-mark-is-not-tone.html">符號名稱不等於聲調</a>
+<h4>過程紀錄</h4><a href="process-interview.html">需求訪談</a><a href="AGENTS.html">AGENTS.md</a><a href="workflow-SKILL.html">graph（SKILL.md）</a><a href="log.html">ingest 紀錄</a></nav><main><h1>紀錄（只往後加）</h1>
+<h2>[2026-11-14] setup | 依確認後的需求摘要建立 <a href="AGENTS.html">AGENTS.md</a> 與資料夾</h2>
+<ul>
+<li>訪談 8 題（第一次一次問 4 題，使用者沒逐題作答，所以全部重問）→ 需求摘要 → 使用者確認 → 建檔</li>
+<li>見 <a href="process-interview.html">process/interview.md</a>、<a href="process-requirements.html">process/requirements.md</a></li>
+</ul>
+<h2>[2026-11-14] ingest | S01 Tingsabadh &amp; Abramson (1993) "Thai", JIPA（A 級）</h2>
+<ul>
+<li>新增：concepts/five-tones、concepts/vowel-length、concepts/live-dead-syllables、concepts/tone-in-speech</li>
+<li>跟舊頁比對：Wiki 原本是空的，沒有矛盾</li>
+<li>缺口：PDF 擷取文字裡的聲調符號是亂碼，五個例字分別是哪個聲調還無法確認 → 待 S03 補上</li>
+</ul>
+<h2>[2026-11-14] ingest | S02 Tumtavitikul (1995) "Tonal Movements in Thai", ICPhS（A 級）</h2>
+<ul>
+<li>新增：concepts/pitch-contours</li>
+<li>更新：concepts/five-tones（加上平調／曲折調分類、連到 pitch-contours）</li>
+<li>跟舊頁比對：S01 只列出聲調名稱、沒有描述音高，所以兩篇沒有矛盾；S02 補上「中、低微降，高微升」</li>
+</ul>
+<h2>[2026-11-14] ingest | S03 LMU Munich「Language Demos: Thai」（B 級）</h2>
+<ul>
+<li>新增：examples/khaa-five-tones、examples/naa-five-tones、concepts/tone-notation</li>
+<li>更新：concepts/pitch-contours（加上五度數字、來源差異）、concepts/five-tones（連到例字）</li>
+<li>補上 S01 的缺口：khaa 五個例字分別是哪個聲調（S03 引用 IPA 圖解）</li>
+<li>跟舊頁比對 → <strong>發現差異</strong>：SoWL 把中、低、高調叫成 mid falling / low falling / high rising，跟 S02「三個平調」的分類不同。依規則採用 A 級的 S02，SoWL 的數字只當發音形狀的參考，寫進 pitch-contours 的「來源差異」</li>
+</ul>
+<h2>[2026-11-14] ingest | S04 Wikipedia「Tone name」Thai 段落（B 級）</h2>
+<ul>
+<li>更新：examples/naa-five-tones（補上泰文字、更精確的意思）、concepts/five-tones（加上泰文聲調名）、concepts/pitch-contours（第二組五度數字＋來源差異）</li>
+<li>跟舊頁比對 → <strong>發現差異</strong>：S03 和 S04 的五度數字不同（例如高調 45 對 35/55）。兩篇都是 B 級，不能互相推翻，所以改用 A 級的 S02 判斷「方向」；教學只講方向，不把某組數字當標準</li>
+<li>自我檢查：five-tones 多寫了一句「中低降高升是傳統順序」，但目前沒有任何來源支持這句 → 刪掉，等有來源再補</li>
+<li>lint 第一次：<strong>2 個錯誤</strong>（naa-five-tones 連到還不存在的 tone-rules 頁）→ 先拿掉連結，等 S05 建好 tone-rules 再加回來 → lint 通過</li>
+</ul>
+<h2>[2026-11-14] ingest | S05 SEAsite（北伊利諾大學）泰語聲調規則表，Hartmann 1986（B 級）</h2>
+<ul>
+<li>新增：concepts/consonant-classes、concepts/tone-marks、concepts/tone-rules、pitfalls/tone-mark-is-not-tone</li>
+<li>更新：concepts/live-dead-syllables（加上活／死定義，跟 S01 的結尾音合併）、concepts/five-tones（傳統順序：這次有 S05 當來源了；只有四個符號）、examples/khaa-five-tones（補泰文字＋推理欄）、examples/naa-five-tones（加回 tone-rules 連結）</li>
+<li>跟舊頁比對：用 S05 的規則表推 khaa 五個字的聲調，跟 S03 的對應<strong>完全一致</strong>，沒有矛盾</li>
+<li>資料缺口：หน่า、หน้า、หนา 前面多一個 ห 的規則，目前的來源都沒講 → 記在 tone-rules 的「還沒涵蓋」</li>
+</ul>
+<h2>[2026-11-14] ingest | S06 ThaiPod101〈Your Ultimate Guide to Learning Thai Tones〉（C 級）</h2>
+<ul>
+<li>新增：examples/khaao-set、examples/everyday-pairs、pitfalls/rising-is-not-lowest、pitfalls/romanization-needs-tone</li>
+<li>更新：concepts/five-tones（加例字、練習方法）、concepts/pitch-contours（連到新易錯頁）</li>
+<li>跟舊頁比對 → <strong>發現矛盾</strong>：S06 說「升調是五個裡最低的」，跟 S02（A 級）「升調是明顯上升的曲折調」衝突。依規則採用 S02，S03、S04 的五度數字也支持 S02 → 寫成易錯頁 rising-is-not-lowest</li>
+<li>拼音統一：S06 把不送氣 k 寫成 g（glai、glâi），依 <a href="AGENTS.html">AGENTS.md</a> 3.2 改成 klai、klâi</li>
+<li>用 S05 規則表驗證 S06 的 10 個例字：可以推的都對得上；หมา 的「ห 前綴」規則仍缺來源</li>
+<li>S06 原文有內部不一致（同一個字兩種意思）→ 該組例字不收；另一組含不適合課堂的字義，也不收</li>
+</ul>
+<h2>[2026-11-14] ingest | S07 UCLA Phonetics「The tones of Standard Chinese」（B 級）</h2>
+<ul>
+<li>新增：pitfalls/mandarin-tone-mapping（泰語聲調能不能套國語四聲）</li>
+<li>更新：concepts/five-tones、concepts/pitch-contours（連到新易錯頁）</li>
+<li>跟舊頁比對：沒有矛盾。S07 也指出國語實測值跟傳統數字有差，支持 pitch-contours「只講方向、不背數字」的決定</li>
+</ul>
+<h2>[2026-11-14] lint | 7 篇 ingest 完成後的全面健檢</h2>
+<ul>
+<li>17 頁、31 個不同的泰文例字；斷鏈 0、孤兒頁 0、拼音不一致 0、來源矛盾規則違反 0</li>
+<li>腳本抓不到、由 AI 提出的資料缺口：ห 前綴（หน่า、หนา、หมา）的聲調規則目前沒有來源 → 建議下一篇 ingest 找「ห นำ」的規則說明</li>
+</ul></main></div></body></html>

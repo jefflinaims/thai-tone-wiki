@@ -58,18 +58,20 @@ def section(body, heading):
     return m.group(1) if m else None
 
 
-def load_raw_tiers():
+def load_raw_tiers(errors=None):
     tiers = {}
     for p in sorted(RAW.glob("S*.md")):
         fm, _ = split_frontmatter(p.read_text(encoding="utf-8"))
         sid = (fm or {}).get("id") or p.name.split("-")[0]
         tiers[sid] = (fm or {}).get("tier")
+        if errors is not None and (fm is None or tiers[sid] not in TIER_RANK):
+            errors.append(f"[結構] raw/{p.name}：frontmatter 讀不出來或沒有 tier（A/B/C），來源等級比對會失效")
     return tiers
 
 
 def lint():
     errors, warnings = [], []
-    tiers = load_raw_tiers()
+    tiers = load_raw_tiers(errors)
     pages = {}
     for p in sorted(WIKI.rglob("*.md")):
         pages[p.stem] = p
