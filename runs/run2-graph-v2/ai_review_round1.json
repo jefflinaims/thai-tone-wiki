@@ -1,0 +1,10 @@
+{
+  "node": "G2 AI 審查（workflow/prompts/reviewer.md；只看 slides.json、被引用的 Wiki 頁）",
+  "round": 1,
+  "note": "同一個工作階段內執行，審查時只對照 Wiki 原文，不看 cards.json 和 outline.md。",
+  "issues": [
+    {"slide": "s06", "kind": "教學性", "problem": "表格寫「第一聲（55）？」再接「不行！」，問號沒有解釋，初學者會看不懂到底像不像。Wiki 的意思是：不能念成第一聲（太平），也不要念成第二聲（35）那樣明顯上揚。", "fix": "拿掉問號，把「也不要念成第二聲那樣明顯上揚」寫出來"}
+  ],
+  "checked_ok": ["s02", "s03", "s04", "s05", "s07", "s08", "s09"],
+  "pass": false
+}

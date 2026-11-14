@@ -17,6 +17,7 @@ MIN_SLIDES, MAX_SLIDES = 8, 15
 
 MEASURE = """() => {
   const res = [];
+  document.querySelectorAll('.q').forEach(q => q.classList.add('open'));  // 測驗答案全部打開，測最擠的情況
   document.querySelectorAll('.slide').forEach((s, k) => {
     window.go(k);
     const body = s.querySelector('.body');
@@ -77,10 +78,13 @@ def main():
             target = (page_path.parent / href).resolve()
             if not target.exists():
                 issues.append((d["id"], f"出處連結壞掉：{href}"))
+    # graph v2：模板造成的問題退回節點 5，文字太多退回節點 4
+    route = lambda msg: "5 渲染模板" if any(k in msg for k in ("重疊", "圖框", "連結")) else "4 逐頁稿"
+    issues = [(a, b, route(b)) for a, b in issues]
     failed = sorted({i[0] for i in issues if i[0] != "deck"})
     lines = [f"# G3 渲染檢查 — 第 {args.round} 輪", "", f"- 頁數：{len(data)}（1280×720）",
-             f"- 問題：{len(issues)} 個；要回到節點 4 縮短的頁：{', '.join(failed) or '無'}", f"- 截圖：shots/r{args.round}-*.png", ""]
-    lines += ["| 頁 | 說明 |", "|---|---|", *[f"| {a} | {b} |" for a, b in issues]] if issues else ["全部通過。"]
+             f"- 問題：{len(issues)} 個；有問題的頁：{', '.join(failed) or '無'}", f"- 截圖：shots/r{args.round}-*.png", ""]
+    lines += ["| 頁 | 說明 | 退回 |", "|---|---|---|", *[f"| {a} | {b} | {c} |" for a, b, c in issues]] if issues else ["全部通過。"]
     out = "\n".join(lines)
     (run / f"g3_round{args.round}.md").write_text(out + "\n", encoding="utf-8")
     (run / f"g3_round{args.round}.json").write_text(json.dumps({"issues": issues, "failed_slides": failed}, ensure_ascii=False, indent=2), encoding="utf-8")

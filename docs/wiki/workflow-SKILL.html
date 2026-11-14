@@ -56,20 +56,63 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 <a href="rising-is-not-lowest.html">升調不是「最低的調」</a>
 <a href="romanization-needs-tone.html">拼音不標聲調等於沒寫</a>
 <a href="tone-mark-is-not-tone.html">符號名稱不等於聲調</a>
-<h4>過程紀錄</h4><a href="process-interview.html">需求訪談</a><a href="AGENTS.html">AGENTS.md</a><a href="workflow-SKILL.html">graph（SKILL.md）</a><a href="log.html">ingest 紀錄</a></nav><main><h1>SKILL：從 Wiki 產生教學 HTML 簡報（graph v1）</h1>
+<h4>過程紀錄</h4><a href="process-interview.html">需求訪談</a><a href="AGENTS.html">AGENTS.md</a><a href="workflow-SKILL.html">graph（SKILL.md）</a><a href="log.html">ingest 紀錄</a></nav><main><h1>SKILL：從 Wiki 產生教學 HTML 簡報（graph v2）</h1>
 <h2>目標</h2>
 <ul>
 <li>輸入：一個主題＋讀者（例：「泰語五個聲調怎麼聽、怎麼念？」，讀者是完全沒學過泰語的同學）</li>
 <li>輸出：<code>docs/slides/index.html</code>（8–15 頁、可用鍵盤翻頁），外加 <code>runs/&lt;run-id&gt;/</code> 裡的檢查報告</li>
 <li><strong>只能用 Wiki 的內容</strong>。Wiki 沒有的，就不要放進簡報；資料不夠就停下來，回去 ingest。</li>
 </ul>
+<h2>v2 改了什麼（依 run1 的結果）</h2>
+<table>
+<thead>
+<tr>
+<th>run1 發現的問題</th>
+<th>v2 的改法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最嚴重的錯在<strong>證據卡</strong>就發生了（摘要時把「活音節」這個條件丟掉），但到 G2 的 AI 審查才被抓到</td>
+<td>證據卡改成<strong>逐字引文</strong>，並新增 <strong>G2a 證據卡檢查</strong>（程式）：引文必須一字不差出現在 Wiki；引用表格的一列時必須附上表頭</td>
+</tr>
+<tr>
+<td>逐頁稿的數字、泰文只對整頁 Wiki 比對，太寬鬆</td>
+<td>G2 改成對「這一頁用到的證據卡」比對，每頁要列 <code>cards</code></td>
+</tr>
+<tr>
+<td>G3 的問題都是模板造成的，但 v1 只能退回節點 4</td>
+<td>G3 新增退回<strong>節點 5</strong> 的線：重疊、超出圖框、連結壞掉 → 修模板；文字溢出 → 回節點 4</td>
+</tr>
+<tr>
+<td>渲染問題要到最後才發現，而且前兩輪程式都沒抓到</td>
+<td>新增 <strong>G0 模板測試</strong>：改了模板就先用最難排版的假資料測，通過才開始寫稿；G3 程式加上「文字重疊」「超出圖框」檢查</td>
+</tr>
+<tr>
+<td>「第 7 頁說明」的頁碼被當成事實數字</td>
+<td>寫作規則：簡報內不用數字頁碼，改用頁名</td>
+</tr>
+</tbody>
+</table>
 <h2>節點與流程</h2>
-<pre><code>[1 檢索 Wiki] → &lt;G1 覆蓋率關卡&gt; → [2 證據卡（每頁平行）] → [3 大綱] → (H 人工確認)
-                    │不足→停                                     │退回→3 或 1
-                                                                  ↓
-[4 逐頁稿] → &lt;G2 忠實度檢查&gt; → [5 渲染 HTML] → &lt;G3 渲染檢查&gt; → [6 交件＋報告]
-    ↑            │不過→只修那幾頁                 │不過→回 4
-    └────────────┴─────────────────────────────────┘
+<pre><code class="language-mermaid">flowchart LR
+  G0{{G0 模板測試}} -.模板有改才跑.-&gt; N1
+  N1[1 檢索 Wiki] --&gt; G1{{G1 覆蓋率}}
+  G1 -- 不足 --&gt; STOP([停止：回去 ingest])
+  G1 --&gt; N2[2 證據卡 逐字引文]
+  N2 --&gt; G2a{{G2a 證據卡檢查}}
+  G2a -- 引文對不上 --&gt; N2
+  G2a --&gt; N3[3 大綱] --&gt; H[/H 人工確認/]
+  H -- 改大綱 --&gt; N3
+  H -- 補檢索 --&gt; N1
+  H --&gt; N4[4 逐頁稿]
+  N4 --&gt; G2{{G2 忠實度 程式＋AI}}
+  G2 -- 只重寫那幾頁 --&gt; N4
+  G2 -- 缺資料 --&gt; N1
+  G2 --&gt; N5[5 渲染 HTML] --&gt; G3{{G3 渲染檢查}}
+  G3 -- 文字太多 --&gt; N4
+  G3 -- 模板問題 --&gt; N5
+  G3 --&gt; N6([6 交件＋報告])
 </code></pre>
 <table>
 <thead>
@@ -82,91 +125,83 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 </thead>
 <tbody>
 <tr>
+<td>G0 模板測試</td>
+<td>程式 <code>tools/template_test.py</code></td>
+<td>假資料 → 通過／不過</td>
+<td>只有改了 <code>render_slides.py</code> 才跑。不過就修模板</td>
+</tr>
+<tr>
 <td>1 檢索 Wiki</td>
 <td>AI</td>
 <td>主題 → <code>retrieval.json</code></td>
 <td>先讀 <code>wiki/index.md</code>，列出學習目標，每個目標對應到哪幾頁</td>
 </tr>
 <tr>
-<td>G1 覆蓋率關卡</td>
+<td>G1 覆蓋率</td>
 <td>程式 <code>tools/check_coverage.py</code></td>
-<td><code>retrieval.json</code> → 通過／停止</td>
-<td>每個學習目標至少 1 頁、總共至少 3 頁、頁面都存在。<strong>不足就整個停下</strong>，不准用 AI 自己的知識補</td>
+<td>→ 通過／停止</td>
+<td>每個目標至少 1 頁、總共至少 3 頁。<strong>不足就停</strong>，不准用 AI 自己的知識補</td>
 </tr>
 <tr>
 <td>2 證據卡</td>
-<td>AI（每頁一張，可平行）</td>
+<td>AI（每頁平行）</td>
 <td>Wiki 頁 → <code>cards.json</code></td>
-<td>每頁摘出要放進簡報的重點</td>
+<td>每張卡 = 一段<strong>逐字引文</strong>（quote）；引用表格的一列要附表頭（context）</td>
+</tr>
+<tr>
+<td><strong>G2a 證據卡檢查</strong></td>
+<td>程式 <code>tools/check_cards.py</code></td>
+<td>→ 通過／退回 2</td>
+<td>引文必須一字不差出現在 Wiki</td>
 </tr>
 <tr>
 <td>3 大綱</td>
 <td>AI</td>
-<td>卡片 → <code>outline.md</code></td>
-<td>8–15 頁，教學順序：引起動機 → 概念 → 例字 → 易錯 → 規則簡介 → 練習 → 總結</td>
+<td>→ <code>outline.md</code></td>
+<td>8–15 頁；教學順序：引起動機 → 概念 → 例字 → 易錯 → 規則簡介 → 練習 → 總結</td>
 </tr>
 <tr>
 <td>H 人工確認</td>
 <td>使用者</td>
-<td><code>outline.md</code> → 同意／退回</td>
-<td>退回時寫明是要「改大綱」還是「補檢索」</td>
+<td>→ 同意／退回</td>
+<td>退回時寫明「改大綱」或「補檢索」</td>
 </tr>
 <tr>
 <td>4 逐頁稿</td>
 <td>AI</td>
 <td>大綱＋卡片 → <code>slides.json</code></td>
-<td>每頁都要列 <code>cites</code>（引用的 Wiki 頁 slug）</td>
+<td>每頁列 <code>cites</code>（Wiki 頁）和 <code>cards</code>（證據卡）；可以換句話說，但<strong>條件和程度詞（微微、大約、只有…時）不能丟</strong></td>
 </tr>
 <tr>
-<td>G2 忠實度檢查</td>
+<td>G2 忠實度</td>
 <td>程式 <code>tools/check_slides.py</code>＋AI 審查</td>
-<td><code>slides.json</code> → 報告</td>
-<td>見下方「檢查清單」。不過的頁<strong>只重寫那幾頁</strong></td>
+<td>→ 報告</td>
+<td>數字、泰文要出現在這頁用的證據卡裡；AI 審查用 <code>workflow/prompts/reviewer.md</code></td>
 </tr>
 <tr>
-<td>5 渲染 HTML</td>
+<td>5 渲染</td>
 <td>程式 <code>tools/render_slides.py</code></td>
-<td><code>slides.json</code> → <code>docs/slides/index.html</code></td>
-<td>每頁頁尾自動加上「出處」連結到 Wiki 頁</td>
+<td>→ <code>docs/slides/index.html</code></td>
+<td>頁尾自動加出處連結</td>
 </tr>
 <tr>
 <td>G3 渲染檢查</td>
-<td>程式 <code>tools/render_check.py</code>（無頭瀏覽器）</td>
-<td>HTML → 報告</td>
-<td>1280×720 每一頁都不能溢出；頁數 8–15；出處連結都有效。不過就回到 4 縮短文字</td>
+<td>程式 <code>tools/render_check.py</code>＋看截圖</td>
+<td>→ 報告</td>
+<td>溢出 → 退回 4；重疊、超出圖框、連結 → 退回 5</td>
 </tr>
 <tr>
 <td>6 交件</td>
 <td>AI</td>
-<td>全部 → <code>runs/&lt;run-id&gt;/report.md</code></td>
+<td>→ <code>report.md</code></td>
 <td>列出每一輪抓到什麼、改了什麼</td>
 </tr>
 </tbody>
 </table>
-<h2>檢查清單</h2>
-<h3>G2 程式檢查（<code>check_slides.py</code>）</h3>
-<ol>
-<li>每一頁（封面除外）都有 <code>cites</code>，而且引用的 Wiki 頁存在。</li>
-<li>簡報裡出現的<strong>每個數字</strong>，都找得到於該頁引用的 Wiki 頁。</li>
-<li>簡報裡出現的<strong>每個泰文字</strong>，都找得到於該頁引用的 Wiki 頁。</li>
-<li>「泰文 拼音（聲調）」的寫法要跟 Wiki 一致，拼音的聲調符號要跟聲調名對得上。</li>
-<li>每個學習目標至少有一頁簡報負責。</li>
-<li>覆蓋率：<code>retrieval.json</code> 列出的頁面，至少 70% 有被簡報引用。</li>
-</ol>
-<h3>G2 AI 審查（新對話，只給簡報和被引用的頁面）</h3>
-<p>用 <code>workflow/prompts/reviewer.md</code>。檢查：
-- <strong>忠實度</strong>：有沒有講反、講過頭（把「微微上升」講成「上升」）、或 Wiki 沒有的說法。
-- <strong>教學性</strong>：完全沒學過泰語的人看得懂嗎？術語第一次出現有沒有解釋？</p>
-<h3>G3 渲染檢查（<code>render_check.py</code>）</h3>
-<ul>
-<li>每一頁在 1280×720 下內容不溢出。</li>
-<li>頁數 8–15。</li>
-<li>頁尾的出處連結指到存在的 Wiki 頁。</li>
-</ul>
 <h2>剎車</h2>
 <ul>
-<li><strong>硬上限</strong>：G2 → 4、G3 → 4 這兩個迴圈，各最多 3 輪。第 3 輪還不過，就交件並在報告寫明「未通過的項目」。</li>
+<li><strong>硬上限</strong>：每個迴圈最多 3 輪。第 3 輪還不過，就交件並在報告寫明「未通過的項目」。</li>
 <li><strong>資料不足就停</strong>：G1 不過時直接停止，回報缺哪個學習目標，建議 ingest 什麼資料。</li>
 <li><strong>每一輪只修報告列出的問題</strong>，不准順手改別的頁。</li>
-<li><strong>花費</strong>：每次執行記錄跑了幾輪，避免無限重跑。</li>
+<li><strong>花費</strong>：記錄每個迴圈跑了幾輪；AI 審查只重看上一輪改過的頁。</li>
 </ul></main></div></body></html>

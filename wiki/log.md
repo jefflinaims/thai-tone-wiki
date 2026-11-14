@@ -59,3 +59,8 @@ type: log
 - 修正：lint 遇到 raw frontmatter 讀不出來或沒有 tier 時，改成報錯（重跑後確實抓到 3 個錯）→ 修好三篇的 title 引號（只改 metadata 格式，沒改內容）→ lint 通過
 - 另外：單獨出現的泰文聲調符號（例如「ข＋่」）在網頁上顯示成方框，統一在前面加上虛線圓圈 ◌（「ข＋◌่」），共 30 處
 - 資料夾調整：docs/ 改放 GitHub Pages 網站，訪談與需求摘要移到 process/
+
+## [2026-11-14] fix | 跑 graph（run2）時發現 Wiki 自己前後不一致
+- pitfalls/mandarin-tone-mapping 寫「上揚的幅度**不到** 3 個半音」，但 concepts/pitch-contours（依 S02）寫的是「**≤** 3 半音」
+- run1 的 AI 審查曾把簡報上的「不到 3 個半音」抓出來，當時只改了簡報，沒有回頭查 Wiki；這次在 run2 補證據卡時才發現源頭在 Wiki
+- 修正：改成「在 3 個半音以內」。lint 只比對泰文拼音，抓不到這種文字上的矛盾，之後 ingest 時要人工比對程度詞

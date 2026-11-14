@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>run2-graph-v2 / 執行報告：run2（graph v2）｜泰語聲調入門 Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f2a37;--muted:#5b6675;--paper:#fbf8f2;--card:#fff;--line:#e6e0d4;--accent:#0f6b6b;
+--t-mid:#5a6b7b;--t-low:#4b4fb8;--t-fall:#c0392b;--t-high:#c27c0e;--t-rise:#2e8b57}
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans TC","Noto Sans Thai","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+color:var(--ink);background:var(--paper);line-height:1.75}
+a{color:var(--accent)}header.top{background:var(--ink);color:#fff;padding:.7rem 1.4rem;display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
+header.top a{color:#fff;text-decoration:none;opacity:.9}header.top a:hover{opacity:1;text-decoration:underline}
+header.top .brand{font-weight:700;margin-right:auto}
+.wrap{display:grid;grid-template-columns:250px 1fr;gap:2rem;max-width:1180px;margin:0 auto;padding:1.5rem}
+nav.side{font-size:.92rem;position:sticky;top:1rem;align-self:start;max-height:92vh;overflow:auto}
+nav.side h4{margin:1rem 0 .3rem;color:var(--muted);font-size:.8rem;letter-spacing:.08em}
+nav.side a{display:block;padding:.15rem .4rem;border-radius:6px;text-decoration:none;color:var(--ink)}
+nav.side a.cur{background:#e8f1f0;color:var(--accent);font-weight:600}
+main{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.6rem 2.2rem;min-width:0}
+main h1{margin-top:.2rem;font-size:1.7rem}main h2{border-top:1px solid var(--line);padding-top:1rem;margin-top:1.8rem;font-size:1.2rem}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left;vertical-align:top}th{background:#f4efe5}
+code,pre{background:#f4efe5;border-radius:6px;font-size:.88rem}pre{padding:.8rem;overflow:auto}code{padding:.1rem .3rem}
+blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px solid var(--t-high);border-radius:6px}
+.meta{color:var(--muted);font-size:.85rem;margin-bottom:1rem}.chip{display:inline-block;border-radius:999px;padding:0 .6rem;font-size:.78rem;background:#eef3f3;color:var(--accent);margin-right:.3rem}
+.ex{white-space:nowrap}.ex .th{font-size:1.15em;font-family:"Noto Sans Thai",sans-serif}.ex .ro{font-style:italic;margin:0 .15rem}
+.ex .tn{display:inline-block;color:#fff;border-radius:5px;padding:0 .35rem;font-size:.8em;font-style:normal}
+.t-mid{background:var(--t-mid)}.t-low{background:var(--t-low)}.t-fall{background:var(--t-fall)}.t-high{background:var(--t-high)}.t-rise{background:var(--t-rise)}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.35rem 1rem;cursor:pointer;font:inherit}
+.filters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.9rem}
+.card{border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;text-decoration:none;color:var(--ink);background:#fff;transition:.15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card b{display:block;margin:.2rem 0}.card small{color:var(--muted)}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.2rem 0}
+.hero a{display:block;padding:1.2rem;border-radius:14px;background:var(--ink);color:#fff;text-decoration:none}
+.hero a b{font-size:1.2rem;display:block}.hero a.alt{background:var(--accent)}.hero a.alt2{background:#fff;color:var(--ink);border:1px solid var(--line)}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
+</style></head><body>
+<header class="top"><span class="brand">泰語聲調入門 LLM Wiki</span><a href="index.html">Wiki 目錄</a><a href="../slides/index.html">教學簡報</a><a href="../index.html">作業首頁</a><a href="https://github.com/jefflinaims/thai-tone-wiki">GitHub</a></header>
+<div class="wrap"><nav class="side"><a href="index.html">目錄（全部頁面）</a>
+<h4>概念</h4>
+<a href="consonant-classes.html">子音三類</a>
+<a href="five-tones.html">五個聲調總覽</a>
+<a href="live-dead-syllables.html">活音節與死音節</a>
+<a href="pitch-contours.html">五個聲調的音高曲線</a>
+<a href="tone-in-speech.html">說話時聲調會變</a>
+<a href="tone-marks.html">四個聲調符號</a>
+<a href="tone-notation.html">聲調的標記法</a>
+<a href="tone-rules.html">聲調規則表</a>
+<a href="vowel-length.html">母音長短</a>
+<h4>例字</h4>
+<a href="everyday-pairs.html">日常容易念錯的字組</a>
+<a href="khaa-five-tones.html">khaa 的五個聲調</a>
+<a href="khaao-set.html">khaao：米飯、新聞、白色</a>
+<a href="naa-five-tones.html">naa 的五個聲調</a>
+<h4>易錯</h4>
+<a href="mandarin-tone-mapping.html">不能直接套用國語四聲</a>
+<a href="rising-is-not-lowest.html">升調不是「最低的調」</a>
+<a href="romanization-needs-tone.html">拼音不標聲調等於沒寫</a>
+<a href="tone-mark-is-not-tone.html">符號名稱不等於聲調</a>
+<h4>過程紀錄</h4><a href="process-interview.html">需求訪談</a><a href="AGENTS.html">AGENTS.md</a><a href="workflow-SKILL.html">graph（SKILL.md）</a><a href="log.html">ingest 紀錄</a></nav><main><h1>執行報告：run2（graph v2）</h1>
+<ul>
+<li>日期：2026-11-14</li>
+<li>主題、讀者：跟 run1 相同（泰語五個聲調怎麼聽、怎麼念？／完全沒學過泰語的同學）</li>
+<li>graph：<a href="workflow-SKILL.html">workflow/SKILL.md</a> v2（依 run1 的結果修改）</li>
+<li>結果：<strong>這一份就是交出去的簡報</strong>（docs/slides/index.html，9 頁）</li>
+</ul>
+<h2>每個節點發生了什麼</h2>
+<table>
+<thead>
+<tr>
+<th>節點</th>
+<th>結果</th>
+<th>紀錄檔</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G0 模板測試</td>
+<td>模板改過（字放大），先用假資料測：通過</td>
+<td>runs/g0-template-test/</td>
+</tr>
+<tr>
+<td>1 檢索 Wiki</td>
+<td>沿用 run1 修正後的結果：5 個目標、14 頁</td>
+<td>retrieval.json</td>
+</tr>
+<tr>
+<td>G1 覆蓋率</td>
+<td>通過</td>
+<td>g1_coverage.md</td>
+</tr>
+<tr>
+<td>2 證據卡</td>
+<td>33 張，<strong>全部是逐字引文</strong></td>
+<td>cards.json</td>
+</tr>
+<tr>
+<td>G2a 證據卡檢查</td>
+<td>第 1 輪通過（33/33 引文都對得上）</td>
+<td>g2a_round1.md</td>
+</tr>
+<tr>
+<td>3 大綱 ＋ H</td>
+<td>沿用 run1 經使用者確認的 9 頁大綱</td>
+<td>outline.md</td>
+</tr>
+<tr>
+<td>4 逐頁稿</td>
+<td>9 頁，每頁列出用到的證據卡</td>
+<td>slides.round1.json</td>
+</tr>
+<tr>
+<td>G2 第 1 輪</td>
+<td>程式 0 個；AI 審查 1 個（s06 的「第一聲（55）？」看不懂）</td>
+<td>g2_round1.md、ai_review_round1.json</td>
+</tr>
+<tr>
+<td>↳ 退回節點 4</td>
+<td>只重寫 s06</td>
+<td>slides.json</td>
+</tr>
+<tr>
+<td>G2 第 2 輪</td>
+<td>程式 0 個；AI 審查 1 個（s06 新句子在 Wiki 有依據，但不在證據卡裡）</td>
+<td>g2_round2.md、ai_review_round2.json</td>
+</tr>
+<tr>
+<td>↳ 退回節點 2</td>
+<td>補 C34、C35 兩張證據卡 → G2a 通過</td>
+<td>g2a_round2.md</td>
+</tr>
+<tr>
+<td>↳ <strong>發現 Wiki 本身的問題</strong></td>
+<td>補 C35 時發現 mandarin-tone-mapping 寫「不到 3 個半音」，跟 pitch-contours 的「≤ 3」不一致 → 修 Wiki，記進 log</td>
+<td>wiki/log.md</td>
+</tr>
+<tr>
+<td>G2a 第 3 輪</td>
+<td>抓到 C35 的引文跟修正後的 Wiki 對不上（證明這個檢查有用）→ 更新引文</td>
+<td>g2a_round3.md</td>
+</tr>
+<tr>
+<td>G2a 第 4 輪、G2 第 3–4 輪</td>
+<td>通過</td>
+<td>g2a_round4.md、g2_round4.md、ai_review_round3.json</td>
+</tr>
+<tr>
+<td>5 渲染 ＋ G3 第 1 輪</td>
+<td>程式通過；人工看截圖也通過</td>
+<td>g3_round1.md、g3_round1_visual.md</td>
+</tr>
+</tbody>
+</table>
+<h2>跟 run1 比較</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>run1（graph v1）</th>
+<th>run2（graph v2）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>證據卡造成的錯</td>
+<td>1 個（丟掉「活音節」的條件），到 G2 AI 審查才抓到</td>
+<td>0 個；G2a 在節點 2 就檢查</td>
+</tr>
+<tr>
+<td>G2 程式抓到的問題</td>
+<td>1 個（還是誤判）</td>
+<td>0 個</td>
+</tr>
+<tr>
+<td>G2 AI 審查抓到的問題</td>
+<td>5 個（2 個忠實度＋1 個嚴重忠實度＋2 個教學性）</td>
+<td>2 個（1 個教學性＋1 個出處），沒有忠實度錯誤</td>
+</tr>
+<tr>
+<td>G3 跑幾輪</td>
+<td>3 輪（到上限），程式漏抓 4 個問題</td>
+<td>1 輪</td>
+</tr>
+<tr>
+<td>渲染問題在哪裡被發現</td>
+<td>最後的 G3，而且靠人看截圖</td>
+<td>G0 已先測過模板，G3 沒有問題</td>
+</tr>
+<tr>
+<td>額外發現</td>
+<td>—</td>
+<td>Wiki 兩頁對「3 個半音」的描述不一致（源頭在 Wiki）</td>
+</tr>
+</tbody>
+</table>
+<h2>結論</h2>
+<ul>
+<li>把檢查往前移到<strong>證據卡（G2a）</strong>和<strong>模板（G0）</strong>之後，後段的 AI 審查只剩「教學性」和「出處」問題，沒有再出現內容講錯。</li>
+<li>往前移還有一個意外的好處：證據卡要逐字對 Wiki，所以 Wiki 自己寫得不一致的地方也被翻出來了。</li>
+</ul></main></div></body></html>

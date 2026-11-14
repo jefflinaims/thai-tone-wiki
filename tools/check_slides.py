@@ -46,6 +46,11 @@ def main():
     pages = {p.stem: p for p in WIKI.rglob("*.md")}
     page_text = {k: split_frontmatter(v.read_text(encoding="utf-8"))[1] for k, v in pages.items()}
     _, word_forms, _, _ = lint()  # wiki 裡每個泰文字的標準寫法
+    cards = {}
+    if (run / "cards.json").exists():
+        for c in json.loads((run / "cards.json").read_text(encoding="utf-8"))["cards"]:
+            if "quote" in c:  # graph v2 的證據卡才有逐字引文
+                cards[c["id"]] = c
 
     issues = []  # (slide_id, kind, message)
     cited_all = set()
@@ -71,14 +76,26 @@ def main():
         good = [c for c in cites if c in pages]
         cited_all.update(good)
         source = "\n".join(page_text[c] for c in good)
+        where = ", ".join(good)
+        if cards:  # v2：數字和泰文要對到「這一頁用的證據卡」，不是整頁 Wiki
+            used = s.get("cards", [])
+            if not used:
+                issues.append((sid, "證據卡", "沒有列出用到哪幾張證據卡"))
+            for cid in used:
+                if cid not in cards:
+                    issues.append((sid, "證據卡", f"證據卡 {cid} 不存在"))
+                elif cards[cid]["page"] not in good:
+                    issues.append((sid, "出處", f"用了證據卡 {cid}（[[{cards[cid]['page']}]]），但 cites 沒列這頁"))
+            source = "\n".join(cards[c]["quote"] + "\n" + cards[c].get("context", "") for c in used if c in cards)
+            where = "證據卡 " + ", ".join(used)
         text = slide_text(s)
 
         for n in sorted(set(NUM_RE.findall(text)), key=lambda x: float(x)):
             if not re.search(rf"(?<![\d.]){re.escape(n)}(?![\d.])", source):
-                issues.append((sid, "數字", f"「{n}」在引用的頁面（{', '.join(good)}）裡找不到"))
+                issues.append((sid, "數字", f"「{n}」在 {where} 裡找不到"))
         for w in sorted(set(THAI_RE.findall(text))):
             if w not in source:
-                issues.append((sid, "泰文", f"「{w}」在引用的頁面（{', '.join(good)}）裡找不到"))
+                issues.append((sid, "泰文", f"「{w}」在 {where} 裡找不到"))
         for thai, roman, tone in EXAMPLE_RE.findall(text):
             implied = tone_from_roman(roman)
             if implied and implied != tone:
