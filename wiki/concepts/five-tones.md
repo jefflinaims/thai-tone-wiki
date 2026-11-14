@@ -1,7 +1,7 @@
 ---
 title: 五個聲調總覽
 type: concept
-sources: [S01, S02]
+sources: [S01, S02, S04]
 updated: 2026-11-14
 ---
 # 五個聲調總覽
@@ -10,20 +10,20 @@ updated: 2026-11-14
 
 ## 五個聲調
 
-| 中文名 | 英文 | 類別（S02） |
-|---|---|---|
-| 中調 | mid | 平調 |
-| 低調 | low | 平調 |
-| 降調 | falling | 曲折調 |
-| 高調 | high | 平調 |
-| 升調 | rising | 曲折調 |
+| 中文名 | 英文 | 泰文名稱（S04） | 類別（S02） |
+|---|---|---|---|
+| 中調 | mid | สามัญ | 平調 |
+| 低調 | low | เอก | 平調 |
+| 降調 | falling | โท | 曲折調 |
+| 高調 | high | ตรี | 平調 |
+| 升調 | rising | จัตวา | 曲折調 |
 
 學術文獻（S01）的說法是「五個聲調」：high、mid、low、rising、falling。
 每個聲調實際的音高走向，見 [[pitch-contours]]；拼音上怎麼標聲調，見 [[tone-notation]]。
 
 ## 例字
 - [[khaa-five-tones]]：khaa（中）卡住、khàa（低）南薑、khâa（降）我、kháa（高）做買賣、khǎa（升）腿
-- [[naa-five-tones]]：naa（中）田、nâa（降）臉、náa（高）阿姨、nǎa（升）厚
+- [[naa-five-tones]]：นา naa（中）稻田、หน้า nâa（降）臉、น้า náa（高）舅舅或阿姨、หนา nǎa（升）厚
 
 ## 學習重點
 - 泰語除了聲調之外，**母音長短**也會改變意思，見 [[vowel-length]]。
@@ -42,3 +42,4 @@ updated: 2026-11-14
 ## 參考資料
 - S01 · raw/S01-tingsabadh-abramson-1993.md · https://doi.org/10.1017/S0025100300004746
 - S02 · raw/S02-tumtavitikul-1995.md · https://www.coli.uni-saarland.de/Phonetics/icphs/ICPhS1995/13_ICPhS_1995_Vol_1/p13.1_118.pdf
+- S04 · raw/S04-wikipedia-tone-name.md · https://en.wikipedia.org/wiki/Tone_name
