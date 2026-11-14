@@ -1,0 +1,13 @@
+{
+  "issues": [
+    [
+      "s03",
+      "數字",
+      "「7」在引用的頁面（five-tones, tone-notation）裡找不到"
+    ]
+  ],
+  "failed_slides": [
+    "s03"
+  ],
+  "coverage": 1.0
+}

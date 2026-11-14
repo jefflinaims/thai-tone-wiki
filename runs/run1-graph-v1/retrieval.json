@@ -1,0 +1,61 @@
+{
+  "run": "run1-graph-v1",
+  "graph_version": "v1",
+  "topic": "泰語五個聲調怎麼聽、怎麼念？",
+  "audience": "完全沒學過泰語的同學",
+  "read_first": "wiki/index.md",
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "知道泰語有五個聲調，叫得出中、低、降、高、升",
+      "pages": [
+        "five-tones",
+        "tone-notation"
+      ]
+    },
+    {
+      "id": "O2",
+      "text": "說得出五個聲調的音高怎麼走（平調／曲折調）",
+      "pages": [
+        "pitch-contours"
+      ]
+    },
+    {
+      "id": "O3",
+      "text": "聽例字體會：換聲調就換意思",
+      "pages": [
+        "khaa-five-tones",
+        "khaao-set",
+        "everyday-pairs"
+      ]
+    },
+    {
+      "id": "O4",
+      "text": "避開台灣學習者常見的錯",
+      "pages": [
+        "mandarin-tone-mapping",
+        "rising-is-not-lowest",
+        "romanization-needs-tone"
+      ]
+    },
+    {
+      "id": "O5",
+      "text": "大概知道泰文怎麼標聲調（規則簡介）",
+      "pages": [
+        "tone-rules",
+        "consonant-classes",
+        "tone-marks",
+        "tone-mark-is-not-tone",
+        "live-dead-syllables"
+      ]
+    }
+  ],
+  "not_used_and_why": {
+    "naa-five-tones": "低調例字是「暱稱」，不常用；而且 ห 前綴規則 Wiki 還沒有來源，簡報用 khaa 組就夠",
+    "vowel-length": "主題是聲調，母音長短不展開",
+    "tone-in-speech": "屬於進階聽力，初學簡報不放"
+  },
+  "revisions": [
+    "round1 AI 審查：s07 需要「活／死音節」的定義 → 退回節點 1，把 live-dead-syllables 加進 O5"
+  ]
+}

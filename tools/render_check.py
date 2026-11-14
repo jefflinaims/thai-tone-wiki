@@ -27,8 +27,19 @@ MEASURE = """() => {
       const r = el.getBoundingClientRect();
       if (r.width && (r.right > sr.right - 40 + 1)) out.push(`<${el.tagName.toLowerCase()}> 超出右邊界 ${Math.round(r.right - (sr.right - 40))}px`);
     });
+    s.querySelectorAll('svg').forEach(svg => { const b = svg.getBoundingClientRect();
+      svg.querySelectorAll('text').forEach(tx => { const r = tx.getBoundingClientRect();
+        if (r.top < b.top - 1 || r.bottom > b.bottom + 1 || r.right > b.right + 1) out.push(`圖上文字「${tx.textContent.trim()}」超出圖框`); }); });
+    // 文字互相重疊：圖上的標籤、頁尾頁碼 vs 浮動按鈕
+    const boxes = [...s.querySelectorAll('svg text, footer .num, footer a')].map(e => [e, e.getBoundingClientRect()]);
+    document.querySelectorAll('#nav button').forEach(b => boxes.push([b, b.getBoundingClientRect()]));
+    for (let a = 0; a < boxes.length; a++) for (let b = a + 1; b < boxes.length; b++) {
+      const [ea, ra] = boxes[a], [eb, rb] = boxes[b];
+      const ox = Math.min(ra.right, rb.right) - Math.max(ra.left, rb.left), oy = Math.min(ra.bottom, rb.bottom) - Math.max(ra.top, rb.top);
+      if (ox > 2 && oy > 2) out.push(`文字重疊：「${(ea.textContent||'').trim().slice(0,6)}」和「${(eb.textContent||'').trim().slice(0,6)}」`);
+    }
     const links = [...s.querySelectorAll('footer a')].map(a => a.getAttribute('href'));
-    res.push({id: s.id, overflow: [...new Set(out)].slice(0, 3), links});
+    res.push({id: s.id, overflow: [...new Set(out)].slice(0, 5), links});
   });
   return res;
 }"""
@@ -61,7 +72,7 @@ def main():
         issues.append(("deck", f"共 {len(data)} 頁，規定 {MIN_SLIDES}–{MAX_SLIDES} 頁"))
     for d in data:
         for o in d["overflow"]:
-            issues.append((d["id"], f"溢出：{o}"))
+            issues.append((d["id"], o if o.startswith("文字重疊") else f"溢出：{o}"))
         for href in d["links"]:
             target = (page_path.parent / href).resolve()
             if not target.exists():

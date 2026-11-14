@@ -48,19 +48,36 @@ def contour_svg(contours, w=560, h=330):
         parts.append(f'<line x1="{pad_l}" x2="{pad_l + gw}" y1="{y(lv)}" y2="{y(lv)}" class="grid"/>'
                      f'<text x="{pad_l - 12}" y="{y(lv) + 5}" class="axis" text-anchor="end">{lv}</text>')
     parts.append(f'<text x="{pad_l + gw / 2}" y="{h - 6}" class="axis" text-anchor="middle">時間 →</text>')
+    ends = []
     for c in contours:
         pts = [int(d) for d in c["value"]]
         n = len(pts)
         coords = [(pad_l + gw * i / (n - 1), y(v)) for i, v in enumerate(pts)]
-        d = "M " + " L ".join(f"{x:.1f} {yy:.1f}" for x, yy in coords)
-        if n == 3:  # 用平滑曲線畫三點的調
-            (x0, y0), (x1, y1), (x2, y2) = coords
-            d = f"M {x0:.1f} {y0:.1f} Q {x1:.1f} {y1 + (y1 - (y0 + y2) / 2):.1f} {x2:.1f} {y2:.1f}"
+        # 用水平切線的三次曲線連接每一段：曲線會剛好經過每個點，不會超出刻度
+        d = f"M {coords[0][0]:.1f} {coords[0][1]:.1f}"
+        for (xa, ya), (xb, yb) in zip(coords, coords[1:]):
+            mx = (xb - xa) / 2
+            d += f" C {xa + mx:.1f} {ya:.1f} {xb - mx:.1f} {yb:.1f} {xb:.1f} {yb:.1f}" if n > 2 else f" L {xb:.1f} {yb:.1f}"
         color = TONE[c["tone"]][1]
         ex, ey = coords[-1]
-        parts.append(f'<path d="{d}" stroke="{color}" class="curve"/>'
-                     f'<circle cx="{ex:.1f}" cy="{ey:.1f}" r="5" fill="{color}"/>'
-                     f'<text x="{ex + 10:.1f}" y="{ey + 6:.1f}" fill="{color}" class="clabel">{html.escape(c["label"])}</text>')
+        parts.append(f'<path d="{d}" stroke="{color}" class="curve"/><circle cx="{ex:.1f}" cy="{ey:.1f}" r="5" fill="{color}"/>')
+        ends.append([ey, color, c["label"], ex])
+    # 終點標籤：太靠近的往上下推開，避免重疊；同時不能超出圖框
+    ends.sort()
+    gap, lo, hi = 24, pad_t + 8, h - pad_b - 4
+    ys = [e[0] for e in ends]
+    for k in range(1, len(ys)):
+        ys[k] = max(ys[k], ys[k - 1] + gap)
+    if ys and ys[-1] > hi:
+        ys[-1] = hi
+        for k in range(len(ys) - 2, -1, -1):
+            ys[k] = min(ys[k], ys[k + 1] - gap)
+    if ys and ys[0] < lo:
+        ys[0] = lo
+        for k in range(1, len(ys)):
+            ys[k] = max(ys[k], ys[k - 1] + gap)
+    for e, ly in zip(ends, ys):
+        parts.append(f'<text x="{e[3] + 12:.1f}" y="{ly + 7:.1f}" fill="{e[1]}" class="clabel">{html.escape(e[2])}</text>')
     parts.append("</svg>")
     return "".join(parts)
 
@@ -130,7 +147,7 @@ svg .clabel{font-size:19px;font-weight:700}
 .q{all:unset;cursor:pointer;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 18px;font-size:23px;display:flex;flex-direction:column;gap:6px}
 .q:hover{border-color:var(--accent)}.q .qa{display:none;color:var(--accent);font-weight:700}.q.open .qa{display:block}.q.open .hint{display:none}
 .q .hint{font-size:15px;color:var(--muted)}
-#nav{position:fixed;right:16px;bottom:12px;display:flex;gap:8px;z-index:9}
+#nav{position:fixed;right:16px;top:12px;display:flex;gap:8px;z-index:9}
 #nav button{background:#ffffffdd;border:0;border-radius:8px;padding:6px 14px;font-size:16px;cursor:pointer}
 #bar{position:fixed;left:0;top:0;height:4px;background:#2e8b57;z-index:9;transition:width .2s}
 @media print{html,body{overflow:visible;background:#fff}#stage{position:static;transform:none!important}.slide{display:flex;position:relative;page-break-after:always;height:720px}#nav,#bar{display:none}}

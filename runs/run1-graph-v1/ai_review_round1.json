@@ -1,0 +1,13 @@
+{
+  "node": "G2 AI 審查（用 workflow/prompts/reviewer.md；只看 slides.json 和被引用的 Wiki 頁）",
+  "round": 1,
+  "note": "這次在同一個工作階段裡執行，沒有開新對話。為了減少「自己改自己」的偏誤，審查時只對照 Wiki 頁原文，不看 cards.json 和 outline.md。",
+  "issues": [
+    {"slide": "s04", "kind": "忠實度", "problem": "「不到 3 個半音」：Wiki 寫的是「≤ 3 半音」，包含 3，用「不到」會把程度講小。", "fix": "改成「在 3 個半音以內」"},
+    {"slide": "s04", "kind": "教學性", "problem": "「半音」和圖上的 1–5 沒有解釋，完全沒學過的人看不懂。", "fix": "加一句：1 最低、5 最高；半音是音高的單位"},
+    {"slide": "s06", "kind": "忠實度", "problem": "五度數字只列一組（S03 的值），但 mandarin-tone-mapping 明確寫「數字只是參考，比較時看方向和形狀，不要死背數字」。簡報沒有這個提醒，看起來像標準答案。", "fix": "在表格下方加一句「數字只是參考值，重點是方向」"},
+    {"slide": "s07", "kind": "忠實度", "problem": "「不加符號時：高類念升調，中類、低類念中調」講過頭了。Wiki（consonant-classes、tone-rules）說這只適用於**活音節**；死音節不加符號時，高類、中類念低調，低類念高調或降調。", "fix": "改成「活音節、不加符號時：…」"},
+    {"slide": "s07", "kind": "教學性", "problem": "「活音節／死音節」沒有解釋。引用的四頁都沒有給初學者看得懂的定義，定義在 live-dead-syllables，但這頁不在檢索結果裡。", "fix": "退回節點 1 把 live-dead-syllables 加進檢索，再在 s07 加一句定義"}
+  ],
+  "pass": false
+}
