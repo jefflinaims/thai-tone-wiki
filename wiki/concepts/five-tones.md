@@ -1,7 +1,7 @@
 ---
 title: 五個聲調總覽
 type: concept
-sources: [S01, S02, S04, S05]
+sources: [S01, S02, S04, S05, S06]
 updated: 2026-11-14
 ---
 # 五個聲調總覽
@@ -28,6 +28,12 @@ updated: 2026-11-14
 ## 例字
 - [[khaa-five-tones]]：khaa（中）卡住、khàa（低）南薑、khâa（降）我、kháa（高）做買賣、khǎa（升）腿
 - [[naa-five-tones]]：นา naa（中）稻田、หน้า nâa（降）臉、น้า náa（高）舅舅或阿姨、หนา nǎa（升）厚
+- [[khaao-set]]：ข้าว khâao（降）米飯、ข่าว khàao（低）新聞、ขาว khǎao（升）白色
+- [[everyday-pairs]]：มา maa（中）來、ม้า máa（高）馬、หมา mǎa（升）狗
+
+## 練習方法（S06）
+- 學新字時，把它的五個聲調都念一遍（泰文叫 ผันวรรณยุกต์）。
+- 常聽母語者說話；泰國兒童教育節目的主持人說得慢又清楚，適合初學者。
 
 ## 學習重點
 - 泰語除了聲調之外，**母音長短**也會改變意思，見 [[vowel-length]]。
@@ -39,6 +45,9 @@ updated: 2026-11-14
 - [[tone-notation]]
 - [[khaa-five-tones]]
 - [[naa-five-tones]]
+- [[khaao-set]]
+- [[everyday-pairs]]
+- [[rising-is-not-lowest]]
 - [[vowel-length]]
 - [[live-dead-syllables]]
 - [[tone-in-speech]]
@@ -48,3 +57,4 @@ updated: 2026-11-14
 - S02 · raw/S02-tumtavitikul-1995.md · https://www.coli.uni-saarland.de/Phonetics/icphs/ICPhS1995/13_ICPhS_1995_Vol_1/p13.1_118.pdf
 - S04 · raw/S04-wikipedia-tone-name.md · https://en.wikipedia.org/wiki/Tone_name
 - S05 · raw/S05-seasite-niu-tone-chart.md · https://seasite.niu.edu/thai/tones/tonechart.htm
+- S06 · raw/S06-thaipod101-tones-guide.md · https://thaipod101.com/blog/?p=3781

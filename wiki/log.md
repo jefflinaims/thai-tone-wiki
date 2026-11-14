@@ -35,3 +35,11 @@ type: log
 - 更新：concepts/live-dead-syllables（加上活／死定義，跟 S01 的結尾音合併）、concepts/five-tones（傳統順序：這次有 S05 當來源了；只有四個符號）、examples/khaa-five-tones（補泰文字＋推理欄）、examples/naa-five-tones（加回 tone-rules 連結）
 - 跟舊頁比對：用 S05 的規則表推 khaa 五個字的聲調，跟 S03 的對應**完全一致**，沒有矛盾
 - 資料缺口：หน่า、หน้า、หนา 前面多一個 ห 的規則，目前的來源都沒講 → 記在 tone-rules 的「還沒涵蓋」
+
+## [2026-11-14] ingest | S06 ThaiPod101〈Your Ultimate Guide to Learning Thai Tones〉（C 級）
+- 新增：examples/khaao-set、examples/everyday-pairs、pitfalls/rising-is-not-lowest、pitfalls/romanization-needs-tone
+- 更新：concepts/five-tones（加例字、練習方法）、concepts/pitch-contours（連到新易錯頁）
+- 跟舊頁比對 → **發現矛盾**：S06 說「升調是五個裡最低的」，跟 S02（A 級）「升調是明顯上升的曲折調」衝突。依規則採用 S02，S03、S04 的五度數字也支持 S02 → 寫成易錯頁 rising-is-not-lowest
+- 拼音統一：S06 把不送氣 k 寫成 g（glai、glâi），依 AGENTS.md 3.2 改成 klai、klâi
+- 用 S05 規則表驗證 S06 的 10 個例字：可以推的都對得上；หมา 的「ห 前綴」規則仍缺來源
+- S06 原文有內部不一致（同一個字兩種意思）→ 該組例字不收；另一組含不適合課堂的字義，也不收
