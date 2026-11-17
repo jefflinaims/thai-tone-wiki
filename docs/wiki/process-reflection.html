@@ -39,6 +39,7 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 <h4>概念</h4>
 <a href="consonant-classes.html">子音三類</a>
 <a href="five-tones.html">五個聲調總覽</a>
+<a href="ho-nam.html">帶頭的 ห（ho nam）</a>
 <a href="live-dead-syllables.html">活音節與死音節</a>
 <a href="pitch-contours.html">五個聲調的音高曲線</a>
 <a href="tone-in-speech.html">說話時聲調會變</a>
@@ -57,7 +58,7 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 <a href="romanization-needs-tone.html">拼音不標聲調等於沒寫</a>
 <a href="tone-mark-is-not-tone.html">符號名稱不等於聲調</a>
 <h4>過程紀錄</h4><a href="process-interview.html">需求訪談</a><a href="AGENTS.html">AGENTS.md</a><a href="workflow-SKILL.html">graph（SKILL.md）</a><a href="log.html">ingest 紀錄</a></nav><main><h1>反思：哪個節點最常出錯？檢查往前移到哪裡？</h1>
-<p>這份反思根據兩次實際執行的紀錄：<a href="runs-run1-graph-v1-report.html">runs/run1-graph-v1/report.md</a>（graph v1）、<a href="runs-run2-graph-v2-report.html">runs/run2-graph-v2/report.md</a>（graph v2）。</p>
+<p>這份反思根據三次實際執行的紀錄（run3 是 11/17 補做的獨立審查，見第 4 節）：<a href="runs-run1-graph-v1-report.html">runs/run1-graph-v1/report.md</a>（graph v1）、<a href="runs-run2-graph-v2-report.html">runs/run2-graph-v2/report.md</a>（graph v2）。</p>
 <h2>1. 哪一個節點最常出錯？</h2>
 <p>run1 一共抓到 10 個問題，追查每個問題是在哪個節點發生的：</p>
 <table>
@@ -166,9 +167,32 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 </tbody>
 </table>
 <p>另外，run2 補證據卡時，G2a 把 Wiki 本身寫得不一致的地方翻出來了（一頁寫「不到 3 個半音」，另一頁寫「≤ 3」）。檢查往前移，不只保護了簡報，也回頭修正了知識庫。</p>
-<h2>4. 還沒解決的限制</h2>
+<h2>4. 補做：獨立審查（run3，11/17）</h2>
+<p>run1、run2 的 AI 審查都是寫稿的同一個 AI 在同一個工作階段做的，等於自己檢查自己。11/17 我補做了一次：另外開一個全新的審查者，只給它簡報和被引用的 Wiki 頁，不給證據卡、大綱和之前的報告（紀錄見 <a href="runs-run3-independent-review-report.html">runs/run3-independent-review/report.md</a>）。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>自己審查（run2 最後一輪）</th>
+<th>獨立審查（run3 第 1 輪）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>審查的是同一份簡報</td>
+<td>0 個問題，判定通過</td>
+<td><strong>10 個問題</strong>（嚴重 1、中等 5、輕微 4），判定不通過</td>
+</tr>
+</tbody>
+</table>
+<p>最嚴重的一個：「易錯」那頁寫高調「不是平的」，但 Wiki 寫的是「不是<strong>完全</strong>平的……仍然算平調」，而且跟前後兩頁「高調是平調」互相矛盾。這一句正是 run2 依自己審查的意見改出來的，也就是說<strong>自己審查不只漏抓，還改出了新的錯</strong>。</p>
+<p>修改 6 頁後請同一位審查者做第 2 輪：原本 10 個問題 9 個修好、1 個部分修好（它判斷不成問題），另外抓到 1 個我修改時新產生的小問題（「常見」兩個字 Wiki 沒有），修掉後通過。</p>
+<p><strong>這讓我修正第 1 題的答案</strong>：如果把獨立審查抓到的也算進去，出錯最多的其實是<strong>節點 4（逐頁稿）</strong>，而且問題的型態很一致：換句話說的時候，把限定詞丟掉（「完全」「大致」「明顯」「這個值」）。程式檢查只比對數字和泰文，抓不到這種錯。</p>
+<p><strong>因此再改一次 graph（v2.1）</strong>：G2 的 AI 審查規定必須由另一個全新的審查者做。這不是把檢查往前移，而是把檢查「移到別人手上」：寫稿的人知道自己想說什麼，所以看不出寫出來的字跟原文差在哪裡。</p>
+<p>另外，Wiki 的資料缺口（ห 前綴的規則）也在 11/17 多 ingest 一篇來源補上了。</p>
+<h2>5. 還沒解決的限制</h2>
 <ul>
-<li>AI 審查是在同一個工作階段裡做的，不是真正的「新對話」。我用「只看簡報和 Wiki 原文、不看證據卡和大綱」來降低偏誤，但這仍然算是自己檢查自己。之後可以把 <code>workflow/prompts/reviewer.md</code> 貼到另一個新對話去跑。</li>
+<li>獨立審查者和寫稿者仍然是同一家的模型，可能有共同的盲點；最可靠的還是請懂泰語的人看一次。</li>
+<li>程度詞、限定詞被丟掉的問題，目前只能靠 AI 審查抓，還沒有程式檢查。</li>
 <li>lint 只能比對泰文拼音，抓不到文字層面的矛盾（例如程度詞），目前還是要靠 ingest 時人工比對。</li>
-<li>ห 前綴（หนา、หมา）的聲調規則，目前的 7 篇來源都沒有，Wiki 標為待補。</li>
 </ul></main></div></body></html>

@@ -39,6 +39,7 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 <h4>概念</h4>
 <a href="consonant-classes.html">子音三類</a>
 <a href="five-tones.html">五個聲調總覽</a>
+<a href="ho-nam.html">帶頭的 ห（ho nam）</a>
 <a href="live-dead-syllables.html">活音節與死音節</a>
 <a href="pitch-contours.html">五個聲調的音高曲線</a>
 <a href="tone-in-speech.html">說話時聲調會變</a>
@@ -56,7 +57,7 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 <a href="rising-is-not-lowest.html">升調不是「最低的調」</a>
 <a href="romanization-needs-tone.html">拼音不標聲調等於沒寫</a>
 <a href="tone-mark-is-not-tone.html">符號名稱不等於聲調</a>
-<h4>過程紀錄</h4><a href="process-interview.html">需求訪談</a><a href="AGENTS.html">AGENTS.md</a><a href="workflow-SKILL.html">graph（SKILL.md）</a><a href="log.html">ingest 紀錄</a></nav><main><div class="meta"><span class="chip">概念</span>來源：S01, S05　更新：2026-11-14　<a href="https://github.com/jefflinaims/thai-tone-wiki/blob/main/wiki/concepts/tone-rules.md">原始 markdown</a></div><h1>聲調規則表（tone rules）</h1>
+<h4>過程紀錄</h4><a href="process-interview.html">需求訪談</a><a href="AGENTS.html">AGENTS.md</a><a href="workflow-SKILL.html">graph（SKILL.md）</a><a href="log.html">ingest 紀錄</a></nav><main><div class="meta"><span class="chip">概念</span>來源：S01, S05, S08　更新：2026-11-17　<a href="https://github.com/jefflinaims/thai-tone-wiki/blob/main/wiki/concepts/tone-rules.md">原始 markdown</a></div><h1>聲調規則表（tone rules）</h1>
 <p>看到一個泰文字，怎麼知道它念哪個聲調？要看三件事：<strong>開頭子音的類別、活音節還是死音節、有沒有聲調符號</strong>。</p>
 <h2>三個步驟</h2>
 <ol>
@@ -185,9 +186,9 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 <li>結果欄是依 S05 的規則表推出來的。</li>
 <li>短母音結尾的音節（例如 จะ、สะ、คะ）算死音節：S01 指出音節可以用喉塞音 ʔ 結尾，S05 也把這些字放在「短母音」那一列。</li>
 </ul>
-<h2>規則類來源還沒涵蓋的</h2>
+<h2>特殊寫法：帶頭的 ห</h2>
 <ul>
-<li>naa 那組例字裡，หน่า、หน้า、หนา 前面多了一個 ห。這種寫法怎麼影響聲調，目前 ingest 的來源都沒有說明 → 列為待補資料（lint 時提出）。</li>
+<li>หน่า、หน้า、หนา、หมา 這些字前面多了一個不發音的 ห，它把後面的低類子音變成高類（S08）。推理過程見 <a href="ho-nam.html">帶頭的 ห（ho nam）</a>。</li>
 </ul>
 <h2>相關頁面</h2>
 <ul>
@@ -195,9 +196,11 @@ blockquote{margin:1rem 0;padding:.6rem 1rem;background:#fff7e6;border-left:4px s
 <li><a href="live-dead-syllables.html">活音節與死音節</a></li>
 <li><a href="tone-marks.html">四個聲調符號</a></li>
 <li><a href="naa-five-tones.html">naa 的五個聲調</a></li>
+<li><a href="ho-nam.html">帶頭的 ห（ho nam）</a></li>
 </ul>
 <h2>參考資料</h2>
 <ul>
 <li>S01 · <a href="raw-S01-tingsabadh-abramson-1993.html">raw/S01-tingsabadh-abramson-1993.md</a> · <a href="https://doi.org/10.1017/S0025100300004746">https://doi.org/10.1017/S0025100300004746</a></li>
 <li>S05 · <a href="raw-S05-seasite-niu-tone-chart.html">raw/S05-seasite-niu-tone-chart.md</a> · <a href="https://seasite.niu.edu/thai/tones/tonechart.htm">https://seasite.niu.edu/thai/tones/tonechart.htm</a></li>
+<li>S08 · <a href="raw-S08-wikipedia-thai-script-ho-nam.html">raw/S08-wikipedia-thai-script-ho-nam.md</a> · <a href="https://en.wikipedia.org/wiki/Thai_script">https://en.wikipedia.org/wiki/Thai_script</a></li>
 </ul></main></div></body></html>

@@ -158,7 +158,7 @@ def build_index(pages):
                      f'<small>來源：{", ".join(srcs)}</small></a>')
     raw_count = len(list((ROOT / "raw").glob("S*.md")))
     return f"""<h1>泰語聲調入門 Wiki</h1>
-<p class="meta">{len(cards)} 個頁面，整理自 {raw_count} 篇公開來源（2 篇學術論文、4 篇大學教材／百科、1 篇教學網站）。由 AI 依 <a href="AGENTS.html">AGENTS.md</a> 維護。</p>
+<p class="meta">{len(cards)} 個頁面，整理自 {raw_count} 篇公開來源（2 篇學術論文、5 篇大學教材／百科、1 篇教學網站）。由 AI 依 <a href="AGENTS.html">AGENTS.md</a> 維護。</p>
 <div class="filters"><button class="on" data-f="all">全部</button><button data-f="concept">概念</button><button data-f="example">例字</button><button data-f="pitfall">易錯</button></div>
 <div class="cards">{"".join(cards)}</div>
 <h2>來源（raw/）</h2><ul>{"".join(f'<li><a href="raw-{p.stem}.html">{p.stem}</a></li>' for p in sorted((ROOT / "raw").glob("S*.md")))}</ul>

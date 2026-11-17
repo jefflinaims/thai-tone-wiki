@@ -1,8 +1,8 @@
 # 泰語聲調入門 LLM Wiki（生成式 AI HW10）
 
 - 網站：https://jefflinaims.github.io/thai-tone-wiki/ （教學簡報、Wiki、流程圖、執行報告）
-- 架構依 Karpathy〈LLM Wiki〉：`raw/`（7 篇來源的擷取筆記）→ `wiki/`（AI 維護的 17 頁）→ `AGENTS.md`（規範）
-- 產生簡報的 graph：`workflow/SKILL.md`（v2）；兩次實際執行：`runs/run1-graph-v1/`、`runs/run2-graph-v2/`
+- 架構依 Karpathy〈LLM Wiki〉：`raw/`（8 篇來源的擷取筆記）→ `wiki/`（AI 維護的 18 頁）→ `AGENTS.md`（規範）
+- 產生簡報的 graph：`workflow/SKILL.md`（v2.1）；三次實際執行：`runs/run1-graph-v1/`、`runs/run2-graph-v2/`、`runs/run3-independent-review/`
 - 過程：`process/interview.md`（需求訪談）、`process/requirements.md`、`process/reflection.md`
 
 ## 常用指令

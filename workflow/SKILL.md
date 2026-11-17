@@ -1,7 +1,7 @@
 ---
 name: wiki-to-teaching-slides
 description: 只用本 repo 的 LLM Wiki，產生一份給初學者的教學 HTML 簡報；照事先畫好的 graph 跑，每個檢查關卡不過就退回指定節點。
-version: v2（2026-11-14，依 run1 的結果修改；v1 見 runs/run1-graph-v1/SKILL.v1.md）
+version: v2.1（2026-11-17；v2 依 run1 修改，v2.1 依 run3 把 AI 審查改成獨立審查者；v1 見 runs/run1-graph-v1/SKILL.v1.md）
 ---
 # SKILL：從 Wiki 產生教學 HTML 簡報（graph v2）
 
@@ -53,7 +53,7 @@ flowchart LR
 | 3 大綱 | AI | → `outline.md` | 8–15 頁；教學順序：引起動機 → 概念 → 例字 → 易錯 → 規則簡介 → 練習 → 總結 |
 | H 人工確認 | 使用者 | → 同意／退回 | 退回時寫明「改大綱」或「補檢索」 |
 | 4 逐頁稿 | AI | 大綱＋卡片 → `slides.json` | 每頁列 `cites`（Wiki 頁）和 `cards`（證據卡）；可以換句話說，但**條件和程度詞（微微、大約、只有…時）不能丟** |
-| G2 忠實度 | 程式 `tools/check_slides.py`＋AI 審查 | → 報告 | 數字、泰文要出現在這頁用的證據卡裡；AI 審查用 `workflow/prompts/reviewer.md` |
+| G2 忠實度 | 程式 `tools/check_slides.py`＋**獨立** AI 審查 | → 報告 | 數字、泰文要出現在這頁用的證據卡裡；AI 審查用 `workflow/prompts/reviewer.md`，**必須由另一個全新的審查者做**（新對話或子代理），只給它簡報和被引用的 Wiki 頁，不給證據卡、大綱、之前的報告（v2.1，原因見 runs/run3-independent-review/report.md） |
 | 5 渲染 | 程式 `tools/render_slides.py` | → `docs/slides/index.html` | 頁尾自動加出處連結 |
 | G3 渲染檢查 | 程式 `tools/render_check.py`＋看截圖 | → 報告 | 溢出 → 退回 4；重疊、超出圖框、連結 → 退回 5 |
 | 6 交件 | AI | → `report.md` | 列出每一輪抓到什麼、改了什麼 |
