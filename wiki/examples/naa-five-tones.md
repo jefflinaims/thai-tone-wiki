@@ -1,8 +1,8 @@
 ---
 title: naa 的五個聲調
 type: example
-sources: [S03, S04]
-updated: 2026-11-14
+sources: [S03, S04, S08]
+updated: 2026-11-17
 ---
 # naa 的五個聲調
 
@@ -20,13 +20,15 @@ updated: 2026-11-14
 - S03 把 น้า 翻成 aunt；S04 說明得更精確，是「比媽媽年紀小的舅舅或阿姨」。兩者不衝突，採用較精確的說法。
 - 低調的例字「暱稱」在日常生活中不常用，教學時可以只拿另外四個來練習。
 - 五個字都是 n 開頭，但泰文的寫法不一樣（有的前面多一個 ห，有的加了聲調符號）。
-  น้า 可以用 [[tone-rules]] 推出來（低類 น＋◌้ → 高調）；前面多一個 ห 的寫法，目前的來源還沒有說明，列為待補。
+  น้า 可以用 [[tone-rules]] 推出來（低類 น＋◌้ → 高調）；前面多一個 ห 的三個字，是用不發音的 ห 把 น 變成高類（S08），見 [[ho-nam]]。
 
 ## 相關頁面
 - [[khaa-five-tones]]
 - [[five-tones]]
 - [[tone-rules]]
+- [[ho-nam]]
 
 ## 參考資料
 - S03 · raw/S03-lmu-language-demo-thai.md · https://www.phonetik.uni-muenchen.de/studium/skripten/languagedemos/Demos/thai.html
 - S04 · raw/S04-wikipedia-tone-name.md · https://en.wikipedia.org/wiki/Tone_name
+- S08 · raw/S08-wikipedia-thai-script-ho-nam.md · https://en.wikipedia.org/wiki/Thai_script

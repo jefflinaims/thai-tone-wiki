@@ -1,8 +1,8 @@
 ---
 title: 日常容易念錯的字組
 type: example
-sources: [S05, S06]
-updated: 2026-11-14
+sources: [S05, S06, S08]
+updated: 2026-11-17
 ---
 # 日常容易念錯的字組
 
@@ -13,7 +13,7 @@ updated: 2026-11-14
 |---|---|---|
 | มา maa（中） | 來 | 低類 ม＋活音節、無符號 |
 | ม้า máa（高） | 馬 | 低類 ม＋◌้ |
-| หมา mǎa（升） | 狗 | 前面多一個 ห（規則待補） |
+| หมา mǎa（升） | 狗 | 帶頭的 ห 把低類 ม 變成高類＋活音節、無符號 |
 
 ## 遠、近
 | 例字 | 意思 | 為什麼念這個調 |
@@ -29,13 +29,15 @@ updated: 2026-11-14
 
 - 例字和意思來自 S06；「為什麼」那一欄是用 S05 的規則表推出來的。
 - S06 把 ไกล 拼成 glai（把不送氣的 k 寫成 g）。依 AGENTS.md 的拼音規範，本 Wiki 統一寫成 klai。
-- หมา 前面多一個 ห，這個寫法的規則目前的來源還沒說明（同 [[naa-five-tones]] 的 หนา）。
+- หมา 前面的 ห 不發音，作用是把 ม 變成高類（S08），見 [[ho-nam]]。
 
 ## 相關頁面
 - [[khaao-set]]
 - [[naa-five-tones]]
 - [[tone-rules]]
+- [[ho-nam]]
 
 ## 參考資料
 - S05 · raw/S05-seasite-niu-tone-chart.md · https://seasite.niu.edu/thai/tones/tonechart.htm
 - S06 · raw/S06-thaipod101-tones-guide.md · https://thaipod101.com/blog/?p=3781
+- S08 · raw/S08-wikipedia-thai-script-ho-nam.md · https://en.wikipedia.org/wiki/Thai_script

@@ -64,3 +64,10 @@ type: log
 - pitfalls/mandarin-tone-mapping 寫「上揚的幅度**不到** 3 個半音」，但 concepts/pitch-contours（依 S02）寫的是「**≤** 3 半音」
 - run1 的 AI 審查曾把簡報上的「不到 3 個半音」抓出來，當時只改了簡報，沒有回頭查 Wiki；這次在 run2 補證據卡時才發現源頭在 Wiki
 - 修正：改成「在 3 個半音以內」。lint 只比對泰文拼音，抓不到這種文字上的矛盾，之後 ingest 時要人工比對程度詞
+
+## [2026-11-17] ingest | S08 Wikipedia「Thai script」ho nam 段落（B 級）
+- 目的：補上 11/14 lint 提出的資料缺口（ห 前綴的聲調規則）
+- 新增：concepts/ho-nam
+- 更新：concepts/tone-rules（「還沒涵蓋」改成「特殊寫法」）、examples/everyday-pairs、examples/naa-five-tones（拿掉「待補」）
+- 跟舊頁比對：把 S08 的規則套進 S05 的規則表，หนา、หน่า、หน้า、หมา 四個字推出的聲調，跟 S04、S06 記載的**完全一致**，沒有矛盾
+- 注意：run2 的證據卡 C15 引用的是 everyday-pairs 修改前的文字（「規則待補」）。run2 是歷史紀錄，不回頭改；簡報本身沒有用到那一欄

@@ -1,8 +1,8 @@
 ---
 title: 聲調規則表
 type: concept
-sources: [S01, S05]
-updated: 2026-11-14
+sources: [S01, S05, S08]
+updated: 2026-11-17
 ---
 # 聲調規則表（tone rules）
 
@@ -40,15 +40,17 @@ updated: 2026-11-14
 - 結果欄是依 S05 的規則表推出來的。
 - 短母音結尾的音節（例如 จะ、สะ、คะ）算死音節：S01 指出音節可以用喉塞音 ʔ 結尾，S05 也把這些字放在「短母音」那一列。
 
-## 規則類來源還沒涵蓋的
-- naa 那組例字裡，หน่า、หน้า、หนา 前面多了一個 ห。這種寫法怎麼影響聲調，目前 ingest 的來源都沒有說明 → 列為待補資料（lint 時提出）。
+## 特殊寫法：帶頭的 ห
+- หน่า、หน้า、หนา、หมา 這些字前面多了一個不發音的 ห，它把後面的低類子音變成高類（S08）。推理過程見 [[ho-nam]]。
 
 ## 相關頁面
 - [[consonant-classes]]
 - [[live-dead-syllables]]
 - [[tone-marks]]
 - [[naa-five-tones]]
+- [[ho-nam]]
 
 ## 參考資料
 - S01 · raw/S01-tingsabadh-abramson-1993.md · https://doi.org/10.1017/S0025100300004746
 - S05 · raw/S05-seasite-niu-tone-chart.md · https://seasite.niu.edu/thai/tones/tonechart.htm
+- S08 · raw/S08-wikipedia-thai-script-ho-nam.md · https://en.wikipedia.org/wiki/Thai_script
