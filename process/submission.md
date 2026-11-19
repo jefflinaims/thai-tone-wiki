@@ -69,5 +69,3 @@ https://jefflinaims.github.io/thai-tone-wiki/slides/
 最意外的是，最常出錯的不是我以為的資料來源，而是寫簡報那一步。AI 換句話說的時候，常把「微微」「大致」這種限定詞丟掉，意思就變了。程式檢查只比對數字和泰文，抓不到；AI 自己審自己也抓不到。後來另外開一個全新的審查者，同一份簡報一次挑出 10 個問題。所以我把檢查往前移，讓摘重點時就逐字引用 Wiki 原文，並規定審查一定要換人做，graph 也從 v1 改到 v2.1。
 
 還沒解決的是，審查者和寫稿的都是 AI，我自己又沒能力判斷泰語對錯。之後會把這份 Wiki 當成期末泰語口說教練的知識庫，邊用邊修。
-
-完整反思：https://jefflinaims.github.io/thai-tone-wiki/wiki/process-reflection.html
